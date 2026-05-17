@@ -1,193 +1,377 @@
 ---
 /**
- * Contact / final CTA — funnels everything to WhatsApp.
+ * Contact / Final CTA
  *
- * Replaces the previous 5-field form with a single dominant WA button.
- * Email kept as a small secondary link for those who prefer async contact.
- * Background uses an ambient blue/amber wash so this section reads as
- * the page's visual finale.
+ * Inspired by webekspor's section 07 pattern:
+ * - Full-width section with strong background contrast (not a card)
+ * - Large headline left-aligned, CTAs on the right
+ * - Horizontal layout: copy | actions
+ * - Trust chips below the headline
+ * - Sticky mini-CTA bar just above the footer
  */
 import { SITE } from '../config/site';
 import { waLink } from '../lib/wa';
 ---
 
-<section id="kontak" class="cta-final">
-  <div class="cta-glow" aria-hidden="true"></div>
+<!-- ===== MAIN CTA SECTION ===== -->
+<section id="kontak" class="cta-section">
+  <!-- Decorative background elements -->
+  <div class="cta-bg" aria-hidden="true">
+    <div class="cta-bg-blob cta-bg-blob--1"></div>
+    <div class="cta-bg-blob cta-bg-blob--2"></div>
+    <div class="cta-bg-grid"></div>
+  </div>
+
   <div class="container">
-    <div class="cta-card reveal">
-      <span class="cta-eyebrow">Konsultasi Gratis</span>
-      <h2>Siap Hadirkan Website Keren <br /><span class="gradient-text">untuk Sekolah Anda?</span></h2>
-      <p class="cta-lede">
-        Cerita kebutuhan sekolah Anda lewat WhatsApp. Tim kami balas cepat dan bantu rekomendasikan paket yang paling pas — tanpa komitmen apa-apa.
-      </p>
-
-      <ul class="cta-reasons" aria-label="Alasan konsultasi via WhatsApp">
-        <li><span class="check">✓</span> Gratis &amp; tanpa syarat</li>
-        <li><span class="check">✓</span> Balas cepat di jam kerja</li>
-        <li><span class="check">✓</span> Konsultasi langsung dengan tim</li>
-      </ul>
-
-      <a class="btn btn-wa-hero" href={waLink()} target="_blank" rel="noopener">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
-        </svg>
-        Chat WhatsApp Sekarang
-      </a>
-
-      <div class="cta-secondary">
-        atau email langsung ke
-        <a href={`mailto:${SITE.contact.email}`}>{SITE.contact.email}</a>
+    <div class="cta-inner reveal">
+      <!-- Left: copy -->
+      <div class="cta-copy">
+        <div class="cta-label">
+          <span class="cta-label-dot"></span>
+          KONSULTASI GRATIS · BALAS CEPAT · TANPA KOMITMEN
+        </div>
+        <h2 class="cta-headline">
+          Saatnya sekolah Anda<br />
+          <span class="cta-headline-accent">hadir di internet.</span>
+        </h2>
+        <p class="cta-sub">
+          Ceritakan kebutuhan sekolah Anda lewat WhatsApp. Tim kami bantu rekomendasikan paket yang paling pas — mulai dari Rp&nbsp;1,1&nbsp;juta.
+        </p>
+        <ul class="cta-chips" aria-label="Keunggulan layanan">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Gratis &amp; tanpa syarat
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Selesai 5–10 hari kerja
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Sekali bayar, milik selamanya
+          </li>
+        </ul>
       </div>
 
-      <div class="cta-hours">⏱ Senin–Jumat 08.00–17.00 WIB · Sabtu 09.00–14.00 WIB</div>
+      <!-- Right: actions -->
+      <div class="cta-actions">
+        <a class="cta-btn-wa" href={waLink()} target="_blank" rel="noopener">
+          <span class="cta-btn-wa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
+            </svg>
+          </span>
+          <span class="cta-btn-wa-text">
+            <span class="cta-btn-wa-main">Chat WhatsApp Sekarang</span>
+            <span class="cta-btn-wa-hint">Biasanya balas dalam 1 jam</span>
+          </span>
+          <svg class="cta-btn-wa-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a class="cta-btn-email" href={`mailto:${SITE.contact.email}`}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-10 5L2 7"></path>
+          </svg>
+          {SITE.contact.email}
+        </a>
+
+        <p class="cta-hours">⏱ Senin–Jumat 08.00–17.00 · Sabtu 09.00–14.00 WIB</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ===== STICKY MINI CTA BAR (above footer) ===== -->
+<div class="cta-bar">
+  <div class="container">
+    <div class="cta-bar-inner">
+      <p class="cta-bar-text">
+        <strong>Siap bikin website sekolah?</strong>
+        Mulai dari Rp&nbsp;1,1&nbsp;juta — sekali bayar.
+      </p>
+      <a class="cta-bar-btn" href={waLink()} target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2z"></path>
+        </svg>
+        Konsultasi Gratis
+      </a>
+    </div>
+  </div>
+</div>
+
 <style>
-  .cta-final {
+  /* ── Main CTA section ─────────────────────────────────────────────── */
+  .cta-section {
     position: relative;
-    overflow: hidden;
     padding: 120px 0;
+    overflow: hidden;
+    /* Distinct background — darker than the page bg so it reads as a finale */
+    background: color-mix(in oklab, var(--bg) 40%, #000);
+    border-top: 1px solid var(--border-strong);
   }
 
-  /* Big diffuse glow that sells "this is the finale". Sits behind everything,
-     pointer-events disabled so it never blocks clicks. */
-  .cta-glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .cta-glow::before, .cta-glow::after {
-    content: "";
+  /* Decorative background */
+  .cta-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+
+  .cta-bg-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(100px);
   }
-  .cta-glow::before {
-    width: 520px; height: 520px;
+  .cta-bg-blob--1 {
+    width: 600px; height: 600px;
     background: var(--accent);
-    opacity: 0.25;
-    top: -100px; left: -120px;
+    opacity: 0.22;
+    top: -180px; left: -160px;
   }
-  .cta-glow::after {
-    width: 460px; height: 460px;
+  .cta-bg-blob--2 {
+    width: 500px; height: 500px;
     background: var(--accent-2);
-    opacity: 0.18;
-    bottom: -120px; right: -100px;
+    opacity: 0.14;
+    bottom: -160px; right: -120px;
   }
 
-  .cta-card {
+  /* Subtle dot-grid overlay — gives depth without being noisy */
+  .cta-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  /* ── Inner layout: copy | actions ────────────────────────────────── */
+  .cta-inner {
     position: relative;
     z-index: 1;
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 56px 40px;
-    background: color-mix(in oklab, var(--surface) 80%, transparent);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-lg);
-    backdrop-filter: blur(12px) saturate(140%);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
   }
 
-  .cta-eyebrow {
+  /* ── Copy side ────────────────────────────────────────────────────── */
+  .cta-label {
     display: inline-flex;
     align-items: center;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
-    color: var(--accent);
-    font-size: 12.5px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    gap: 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-3);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .cta-label-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: dot-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes dot-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25); }
+    50%       { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  }
+
+  .cta-headline {
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
     margin-bottom: 20px;
+    color: var(--text);
+  }
+  .cta-headline-accent {
+    background: linear-gradient(120deg, var(--text) 0%, var(--accent) 55%, var(--accent-2) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .cta-card h2 {
-    font-size: clamp(32px, 4.4vw, 46px);
-    margin-bottom: 18px;
-  }
-
-  .cta-lede {
+  .cta-sub {
     font-size: 17px;
     color: var(--text-2);
-    margin: 0 auto 28px;
-    max-width: 540px;
-    line-height: 1.6;
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 28px;
   }
 
-  .cta-reasons {
+  .cta-chips {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 24px;
+    gap: 10px;
     list-style: none;
     padding: 0;
-    margin: 0 0 32px;
+    margin: 0;
   }
-  .cta-reasons li {
+  .cta-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-2);
+  }
+  .cta-chips li svg { color: var(--success); flex-shrink: 0; }
+
+  /* ── Actions side ─────────────────────────────────────────────────── */
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 300px;
+  }
+
+  /* Primary WA button — the most prominent element on the page */
+  .cta-btn-wa {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 18px 22px;
+    background: #25D366;
+    color: #052e15;
+    border-radius: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 20px 50px -14px rgba(37, 211, 102, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: transform .15s ease, box-shadow .15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-btn-wa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cta-btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 26px 60px -14px rgba(37, 211, 102, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  .cta-btn-wa-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(5, 46, 21, 0.18);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .cta-btn-wa-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+  .cta-btn-wa-main {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .cta-btn-wa-hint {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.75;
+  }
+  .cta-btn-wa-arrow {
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: transform .15s;
+  }
+  .cta-btn-wa:hover .cta-btn-wa-arrow { transform: translateX(3px); }
+
+  /* Secondary email link */
+  .cta-btn-email {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: var(--text-2);
+    font-weight: 500;
+    color: var(--text-3);
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-strong);
+    transition: color .15s, border-color .15s;
   }
-  .cta-reasons .check {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: rgba(16, 185, 129, 0.16);
-    color: var(--success);
-    display: grid; place-items: center;
-    font-size: 12px;
-    font-weight: 700;
+  .cta-btn-email:hover { color: var(--text); border-color: var(--text); }
+
+  .cta-hours {
+    font-size: 12.5px;
+    color: var(--text-3);
+    margin: 0;
+    padding-top: 4px;
   }
 
-  /* The single dominant CTA — bigger than any other button on the page. */
-  .btn-wa-hero {
+  /* ── Sticky mini CTA bar ──────────────────────────────────────────── */
+  .cta-bar {
+    background: color-mix(in oklab, var(--surface) 90%, var(--accent) 10%);
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+  }
+  .cta-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-bar-text {
+    font-size: 15px;
+    color: var(--text-2);
+    margin: 0;
+  }
+  .cta-bar-text strong { color: var(--text); }
+  .cta-bar-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 32px;
+    gap: 8px;
+    padding: 11px 22px;
     background: #25D366;
     color: #052e15;
     font-weight: 700;
-    font-size: 17px;
-    border-radius: 14px;
-    box-shadow: 0 18px 40px -10px rgba(37, 211, 102, 0.55);
-    transition: transform .15s, box-shadow .15s;
+    font-size: 14.5px;
+    border-radius: 10px;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px -8px rgba(37, 211, 102, 0.5);
+    transition: transform .12s, box-shadow .12s;
+    flex-shrink: 0;
   }
-  .btn-wa-hero:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 22px 50px -12px rgba(37, 211, 102, 0.65);
+  .cta-bar-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px -8px rgba(37, 211, 102, 0.6);
   }
 
-  .cta-secondary {
-    margin-top: 22px;
-    font-size: 14px;
-    color: var(--text-3);
-  }
-  .cta-secondary a {
-    color: var(--text);
-    font-weight: 600;
-    border-bottom: 1px dashed var(--border-strong);
-    transition: border-color .15s, color .15s;
-  }
-  .cta-secondary a:hover { color: var(--accent); border-color: var(--accent); }
-
-  .cta-hours {
-    margin-top: 28px;
-    font-size: 13px;
-    color: var(--text-3);
+  /* ── Responsive ───────────────────────────────────────────────────── */
+  @media (max-width: 980px) {
+    .cta-section { padding: 80px 0; }
+    .cta-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .cta-actions { min-width: 0; width: 100%; }
+    .cta-btn-wa { max-width: 480px; }
   }
 
   @media (max-width: 640px) {
-    .cta-final { padding: 80px 0; }
-    .cta-card { padding: 40px 24px; }
-    .cta-reasons { gap: 8px 16px; }
-    .btn-wa-hero { width: 100%; justify-content: center; padding: 16px 20px; font-size: 16px; }
+    .cta-section { padding: 64px 0; }
+    .cta-headline { font-size: 36px; }
+    .cta-chips { gap: 8px; }
+    .cta-chips li { font-size: 12.5px; padding: 6px 12px; }
+    .cta-btn-wa { padding: 16px 18px; }
+    .cta-btn-wa-main { font-size: 15px; }
+    .cta-bar-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .cta-bar-btn { width: 100%; justify-content: center; }
   }
 </style>
