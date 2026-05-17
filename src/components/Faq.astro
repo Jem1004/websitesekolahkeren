@@ -1,0 +1,41 @@
+---
+import { FAQS } from '../data/faq';
+
+// Strip HTML for the JSON-LD payload (Google ignores tags but we stay clean).
+const stripTags = (s: string) => s.replace(/<[^>]*>/g, '');
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: stripTags(f.answerHTML),
+    },
+  })),
+};
+---
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">? FAQ</span>
+      <h2>Pertanyaan yang Sering Ditanyakan</h2>
+      <p>Belum yakin? Mungkin pertanyaan Anda sudah kami jawab di sini.</p>
+    </div>
+    <div class="faq-wrap">
+      {FAQS.map((f) => (
+        <details class="faq-item reveal" open={f.open}>
+          <summary>
+            {f.q}<span class="arr">+</span>
+          </summary>
+          <div class="a" set:html={f.answerHTML} />
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQPage rich result eligibility -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />

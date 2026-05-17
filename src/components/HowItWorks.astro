@@ -1,0 +1,48 @@
+---
+const steps = [
+  {
+    n: '01',
+    title: 'Konsultasi & Pilih Template',
+    body: 'Hubungi via WhatsApp. Ceritakan kebutuhan, pilih template favorit, dan tentukan fitur yang diinginkan.',
+    duration: 'Hari ke-1',
+  },
+  {
+    n: '02',
+    title: 'Pengumpulan Konten',
+    body: 'Kirim logo, foto, profil sekolah, dan data yang ingin ditampilkan. Kami bantu siapkan semuanya.',
+    duration: 'Hari 2–3',
+  },
+  {
+    n: '03',
+    title: 'Proses Pembuatan',
+    body: 'Tim kami membangun website sekolah Anda dengan sistem CMS yang sudah terinstal dan siap pakai.',
+    duration: '5–10 hari kerja',
+  },
+  {
+    n: '04',
+    title: 'Tayang & Pelatihan',
+    body: 'Website live, Anda terima akun admin, dan kami beri pelatihan singkat cara mengelola konten sendiri.',
+    duration: 'Hari terakhir',
+  },
+];
+---
+
+<section id="cara-kerja">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">◇ Cara Kerja</span>
+      <h2>Proses Simpel, Website Jadi Cepat</h2>
+      <p>Empat langkah jelas dari konsultasi awal hingga website sekolah Anda live di internet.</p>
+    </div>
+    <div class="steps">
+      {steps.map((s) => (
+        <div class="step reveal">
+          <div class="num">{s.n}</div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+          <span class="duration">{s.duration}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Features from '../components/Features.astro';
+import Templates from '../components/Templates.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Pricing from '../components/Pricing.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main id="top">
+    <Hero />
+    <Problem />
+    <Features />
+    <Templates />
+    <HowItWorks />
+    <Pricing />
+    <Faq />
+    <Contact />
+  </main>
+  <Footer />
+
+  <!--
+    Page-level interaction module. Astro hoists this into a hashed asset and
+    appends it before </body>; type="module" guarantees deferred parsing so
+    it can't block paint. Keep it side-effect-only — no exports needed.
+  -->
+  <script>
+    import '../scripts/landing.ts';
+  </script>
+</Layout>

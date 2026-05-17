@@ -1,0 +1,87 @@
+---
+import { TEMPLATES } from '../data/templates';
+
+// Initial state matches the source design (Navy active by default).
+const initial = TEMPLATES[0];
+---
+
+<section id="demo">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">⊞ Demo Tampilan</span>
+      <h2>Pilih Tampilan Favorit Sekolah Anda</h2>
+      <p>Setiap template bisa dikustomisasi warna, logo, dan konten sesuai identitas sekolah.</p>
+    </div>
+
+    <div class="tpl-tabs reveal" id="tplTabs" role="tablist">
+      {TEMPLATES.map((t, i) => (
+        <button class={`tpl-tab${i === 0 ? ' active' : ''}`} data-tpl={t.key} role="tab">
+          <span class="sw" style={`background:${t.swatch}`}></span>
+          {t.label}
+        </button>
+      ))}
+    </div>
+
+    <div class="tpl-stage reveal" id="tplStage">
+      <div class={`tpl-frame ${initial.cls}`} id="tplFrame">
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url" id="tplUrl">{initial.url}</div>
+        </div>
+        <div class="tpl-prev" id="tplPrev">
+          <div class="nav-row">
+            <div class="lg"><span class="lg-mark"></span> <span id="tplLogoName">{initial.logoName}</span></div>
+            <div class="links">Beranda · Berita · Profil · Jurusan · PPDB</div>
+          </div>
+          <div class="hero-card">
+            <h4 id="tplHeroTitle">{initial.heroTitle}</h4>
+            <div class="sub" id="tplHeroSub">{initial.heroSub}</div>
+            <button class="cta" type="button">Daftar PPDB 2026</button>
+          </div>
+          <div class="grid3">
+            <div class="c"><span>Siswa Aktif</span><span class="num">1,240</span></div>
+            <div class="c"><span>Tenaga Pendidik</span><span class="num">82</span></div>
+            <div class="c"><span>Program Keahlian</span><span class="num">7</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tpl-info" id="tplInfo">
+        <span class={`tpl-badge ${initial.badge.cls}`} id="tplBadge">{initial.badge.label}</span>
+        <h3 id="tplName">{initial.name}</h3>
+        <p class="sub" id="tplStyle">{initial.style}</p>
+        <p style="font-size:14px;line-height:1.6;color:var(--text-2);margin-bottom:18px" id="tplDesc">
+          {initial.desc}
+        </p>
+        <div class="meta">
+          <div class="item">Cocok Untuk<strong id="tplFit">{initial.fit}</strong></div>
+          <div class="item">Mood<strong id="tplMood">{initial.mood}</strong></div>
+        </div>
+        <ul class="features">
+          <li>Hero dengan call-to-action PPDB</li>
+          <li>Section berita dengan kategori</li>
+          <li>Galeri foto otomatis grid</li>
+          <li>Profil jurusan / program keahlian</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#kontak">
+            Lihat Demo Langsung
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </a>
+          <a class="btn btn-ghost" href="#kontak">Pakai Template Ini</a>
+        </div>
+      </div>
+    </div>
+    <p class="tpl-note reveal">🎨 Warna, font, dan logo sekolah Anda bisa disesuaikan pada semua template.</p>
+  </div>
+</section>
+
+<!--
+  Embed template data as JSON for the runtime switcher.
+  Astro's define:vars would inline a JS object literal; using a JSON island
+  keeps this static + cacheable and avoids escaping pitfalls.
+-->
+<script type="application/json" id="tpl-data" set:html={JSON.stringify(TEMPLATES)} />

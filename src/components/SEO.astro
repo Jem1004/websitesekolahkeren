@@ -1,0 +1,133 @@
+---
+/**
+ * SEO meta tags + JSON-LD structured data.
+ * Renders in <head>. Inject on every page via the Layout component.
+ */
+import { SITE } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  /** Path-only canonical (e.g. "/harga"). Defaults to current pathname. */
+  pathname?: string;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  image = SITE.ogImage,
+  noindex = false,
+  pathname,
+} = Astro.props;
+
+const currentPath = pathname ?? Astro.url.pathname;
+const canonical = new URL(currentPath, SITE.url).toString();
+const ogImageUrl = new URL(image, SITE.url).toString();
+
+// JSON-LD: Organization + LocalBusiness-flavoured ProfessionalService
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE.url}#organization`,
+  name: SITE.name,
+  url: SITE.url,
+  logo: new URL('/icon.svg', SITE.url).toString(),
+  description: SITE.description,
+  email: SITE.contact.email,
+  telephone: SITE.contact.phone,
+  foundingDate: String(SITE.business.foundingYear),
+  areaServed: { '@type': 'Country', name: SITE.business.serviceArea },
+  sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.youtube],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE.url}#website`,
+  url: SITE.url,
+  name: SITE.name,
+  description: SITE.description,
+  inLanguage: SITE.locale,
+  publisher: { '@id': `${SITE.url}#organization` },
+};
+
+// Service offering with priced items — eligible for product/service rich results.
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${SITE.url}#service`,
+  serviceType: 'Jasa pembuatan website sekolah',
+  provider: { '@id': `${SITE.url}#organization` },
+  areaServed: { '@type': 'Country', name: SITE.business.serviceArea },
+  description: SITE.description,
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Website Sekolah Esensial',
+      description: 'Paket Standar — landing, berita, galeri, profil, CMS dasar.',
+      price: '1100000',
+      priceCurrency: SITE.business.currency,
+      availability: 'https://schema.org/InStock',
+      url: `${SITE.url}#harga`,
+    },
+    {
+      '@type': 'Offer',
+      name: 'Website Sekolah Pro',
+      description: 'Paket Lengkap — semua fitur Standar plus custom feature, halaman tambahan, dan pelatihan.',
+      price: '1500000',
+      priceCurrency: SITE.business.currency,
+      availability: 'https://schema.org/InStock',
+      url: `${SITE.url}#harga`,
+    },
+  ],
+};
+---
+
+<!-- Primary meta -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={SITE.keywords.join(', ')} />
+<meta name="author" content={SITE.name} />
+<meta name="theme-color" content={SITE.themeColor} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang={SITE.language} href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={SITE.locale.replace('-', '_')} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`Pratinjau ${SITE.name}`} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+<!-- Slot for page-specific structured data (e.g. FAQPage) -->
+<slot />

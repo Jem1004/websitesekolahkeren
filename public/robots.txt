@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block obvious wastes of crawl budget
+Disallow: /api/
+Disallow: /_assets/
+
+# Sitemap reference helps every major crawler
+Sitemap: https://websitesekolahkeren.id/sitemap-index.xml

@@ -1,0 +1,51 @@
+---
+/**
+ * Root document shell. Pass page-specific SEO via props,
+ * page-specific structured data via the default slot of <SEO>.
+ */
+import SEO from '../components/SEO.astro';
+import { SITE } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  pathname?: string;
+}
+
+const { title, description, image, noindex, pathname } = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.language}>
+  <head>
+    <SEO {title} {description} {image} {noindex} {pathname}>
+      <slot name="head" />
+    </SEO>
+
+    <!--
+      Google Fonts via stylesheet. font-display: swap is built-in.
+      preconnect cuts ~100ms off TTFB for the font CSS request.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400&display=swap"
+    />
+  </head>
+
+  <body data-theme="dark" data-accent="blue">
+    <div class="bg-ambient"></div>
+    <div class="noise"></div>
+
+    <slot />
+  </body>
+</html>

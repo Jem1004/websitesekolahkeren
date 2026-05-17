@@ -1,0 +1,90 @@
+---
+import { SITE } from '../config/site';
+---
+
+<section id="kontak">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">→ Mulai Sekarang</span>
+      <h2>Siap Hadirkan Website Keren untuk Sekolah Anda?</h2>
+      <p>Konsultasi gratis, tanpa syarat. Ceritakan kebutuhan sekolah Anda dan kami bantu wujudkan.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Nama Lengkap</label>
+            <input id="f-name" name="name" type="text" placeholder="Pak Budi Santoso" required />
+          </div>
+          <div class="form-field">
+            <label for="f-school">Nama Sekolah</label>
+            <input id="f-school" name="school" type="text" placeholder="SMK Negeri 1 Jakarta" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-wa">No. WhatsApp</label>
+            <input id="f-wa" name="wa" type="tel" placeholder="0812-3456-7890" required />
+          </div>
+          <div class="form-field">
+            <label for="f-city">Kota / Kabupaten</label>
+            <input id="f-city" name="city" type="text" placeholder="Jakarta Selatan" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-msg">Pesan / Pertanyaan (opsional)</label>
+          <textarea id="f-msg" name="message" placeholder="Misal: kami butuh halaman PPDB online dengan formulir pendaftaran..."></textarea>
+        </div>
+        <div class="form-success" id="formSuccess">
+          ✓ Terima kasih! Tim kami akan menghubungi Anda via WhatsApp dalam 1×24 jam.
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Kirim &amp; Konsultasi Gratis
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+
+      <aside class="contact-info">
+        <h3>Atau hubungi langsung</h3>
+        <p class="sub">Pilih kanal yang paling nyaman buat Anda. Kami balas cepat di jam kerja.</p>
+        <a class="contact-chip wa" href={SITE.contact.waUrl} target="_blank" rel="noopener">
+          <span class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2z"></path>
+            </svg>
+          </span>
+          <div><div class="lbl">WhatsApp</div><div class="val">{SITE.contact.phone}</div></div>
+        </a>
+        <a class="contact-chip em" href={`mailto:${SITE.contact.email}`}>
+          <span class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-10 5L2 7"></path>
+            </svg>
+          </span>
+          <div><div class="lbl">Email</div><div class="val">{SITE.contact.email}</div></div>
+        </a>
+        <a class="contact-chip web" href={SITE.url}>
+          <span class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </span>
+          <div><div class="lbl">Website</div><div class="val">{SITE.url.replace('https://', '')}</div></div>
+        </a>
+
+        <div class="contact-hours">
+          <strong>⏱ Jam Operasional</strong>
+          Senin – Jumat: 08.00 – 17.00 WIB<br />
+          Sabtu: 09.00 – 14.00 WIB
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
