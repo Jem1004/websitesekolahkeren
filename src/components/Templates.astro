@@ -1,87 +1,240 @@
 ---
+/**
+ * Templates — grid of mockups instead of single tab/switcher.
+ *
+ * Every card renders an inline CSS-only mockup (same `.tpl-prev` styles
+ * already defined globally). No images required → page stays light. When
+ * real screenshots are ready, swap each `.tpl-prev` block for an <img>.
+ *
+ * Filter buttons drive the runtime filter logic in `landing.ts` by toggling
+ * a data attribute on the grid root; pure CSS handles the show/hide.
+ */
 import { TEMPLATES } from '../data/templates';
+import { waLink } from '../lib/wa';
 
-// Initial state matches the source design (Navy active by default).
-const initial = TEMPLATES[0];
+// Audience taxonomy — derived from each template's `fit` field, but flattened
+// for easy filtering. Keep keys lowercase, ASCII-only.
+type Audience = 'all' | 'sd' | 'smp' | 'sma' | 'smk' | 'islam';
+
+const FILTERS: Array<{ key: Audience; label: string }> = [
+  { key: 'all', label: 'Semua' },
+  { key: 'sd', label: 'SD' },
+  { key: 'smp', label: 'SMP' },
+  { key: 'sma', label: 'SMA' },
+  { key: 'smk', label: 'SMK' },
+  { key: 'islam', label: 'Sekolah Islam' },
+];
+
+// Tag each template with the audience filters it belongs to.
+// (Stored here, not in data/templates.ts, so taxonomy stays presentation-only.)
+const TAGS: Record<string, Audience[]> = {
+  navy: ['smk', 'sma', 'smp'],
+  green: ['sd', 'smp'],
+  purple: ['islam', 'sma'],
+  red: ['sma', 'smp'],
+  dark: ['smk'],
+};
 ---
 
 <section id="demo">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">⊞ Demo Tampilan</span>
+      <span class="eyebrow">⊞ Galeri Template</span>
       <h2>Pilih Tampilan Favorit Sekolah Anda</h2>
-      <p>Setiap template bisa dikustomisasi warna, logo, dan konten sesuai identitas sekolah.</p>
+      <p>Lima template siap pakai dengan karakter berbeda. Semua bisa dikustomisasi warna, logo, dan font sesuai identitas sekolah.</p>
     </div>
 
-    <div class="tpl-tabs reveal" id="tplTabs" role="tablist">
-      {TEMPLATES.map((t, i) => (
-        <button class={`tpl-tab${i === 0 ? ' active' : ''}`} data-tpl={t.key} role="tab">
-          <span class="sw" style={`background:${t.swatch}`}></span>
-          {t.label}
+    <div class="tpl-filters reveal" role="tablist" aria-label="Filter template">
+      {FILTERS.map((f, i) => (
+        <button
+          class={`tpl-filter${i === 0 ? ' active' : ''}`}
+          data-filter={f.key}
+          role="tab"
+          aria-selected={i === 0}
+          type="button"
+        >
+          {f.label}
         </button>
       ))}
     </div>
 
-    <div class="tpl-stage reveal" id="tplStage">
-      <div class={`tpl-frame ${initial.cls}`} id="tplFrame">
-        <div class="browser-bar">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <div class="browser-url" id="tplUrl">{initial.url}</div>
-        </div>
-        <div class="tpl-prev" id="tplPrev">
-          <div class="nav-row">
-            <div class="lg"><span class="lg-mark"></span> <span id="tplLogoName">{initial.logoName}</span></div>
-            <div class="links">Beranda · Berita · Profil · Jurusan · PPDB</div>
+    <div class="tpl-grid" id="tplGrid" data-active-filter="all">
+      {TEMPLATES.map((t) => (
+        <article
+          class="tpl-card reveal"
+          data-tags={(TAGS[t.key] ?? []).join(',')}
+          data-tpl={t.key}
+        >
+          <div class={`tpl-card-frame ${t.cls}`}>
+            <div class="browser-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">{t.url}</div>
+            </div>
+            <div class="tpl-prev tpl-prev--card">
+              <div class="nav-row">
+                <div class="lg"><span class="lg-mark"></span> {t.logoName}</div>
+                <div class="links">Beranda · Berita · Profil</div>
+              </div>
+              <div class="hero-card">
+                <h4>{t.heroTitle}</h4>
+                <div class="sub">{t.heroSub}</div>
+                <button class="cta" type="button" tabindex="-1">Daftar PPDB →</button>
+              </div>
+              <div class="grid3">
+                <div class="c"><span>Siswa</span><span class="num">1.2k</span></div>
+                <div class="c"><span>Guru</span><span class="num">82</span></div>
+                <div class="c"><span>Jurusan</span><span class="num">7</span></div>
+              </div>
+            </div>
           </div>
-          <div class="hero-card">
-            <h4 id="tplHeroTitle">{initial.heroTitle}</h4>
-            <div class="sub" id="tplHeroSub">{initial.heroSub}</div>
-            <button class="cta" type="button">Daftar PPDB 2026</button>
-          </div>
-          <div class="grid3">
-            <div class="c"><span>Siswa Aktif</span><span class="num">1,240</span></div>
-            <div class="c"><span>Tenaga Pendidik</span><span class="num">82</span></div>
-            <div class="c"><span>Program Keahlian</span><span class="num">7</span></div>
-          </div>
-        </div>
-      </div>
 
-      <div class="tpl-info" id="tplInfo">
-        <span class={`tpl-badge ${initial.badge.cls}`} id="tplBadge">{initial.badge.label}</span>
-        <h3 id="tplName">{initial.name}</h3>
-        <p class="sub" id="tplStyle">{initial.style}</p>
-        <p style="font-size:14px;line-height:1.6;color:var(--text-2);margin-bottom:18px" id="tplDesc">
-          {initial.desc}
-        </p>
-        <div class="meta">
-          <div class="item">Cocok Untuk<strong id="tplFit">{initial.fit}</strong></div>
-          <div class="item">Mood<strong id="tplMood">{initial.mood}</strong></div>
-        </div>
-        <ul class="features">
-          <li>Hero dengan call-to-action PPDB</li>
-          <li>Section berita dengan kategori</li>
-          <li>Galeri foto otomatis grid</li>
-          <li>Profil jurusan / program keahlian</li>
-        </ul>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#kontak">
-            Lihat Demo Langsung
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17 17 7"></path>
-              <path d="M7 7h10v10"></path>
-            </svg>
-          </a>
-          <a class="btn btn-ghost" href="#kontak">Pakai Template Ini</a>
-        </div>
-      </div>
+          <div class="tpl-card-body">
+            <div class="tpl-card-head">
+              <h3>{t.name}</h3>
+              <span class={`tpl-badge ${t.badge.cls}`}>{t.badge.label}</span>
+            </div>
+            <p class="tpl-card-mood">{t.mood}</p>
+            <p class="tpl-card-fit"><span>Cocok untuk:</span> {t.fit}</p>
+            <div class="tpl-card-cta">
+              <a class="btn btn-ghost btn-sm" href={waLink(`Halo, saya tertarik dengan template "${t.name}". Bisa info lebih lanjut?`)} target="_blank" rel="noopener">
+                Pakai Template Ini
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
-    <p class="tpl-note reveal">🎨 Warna, font, dan logo sekolah Anda bisa disesuaikan pada semua template.</p>
+
+    <p class="tpl-note reveal">🎨 Warna, font, dan logo sekolah Anda bisa disesuaikan pada semua template — tanpa biaya tambahan.</p>
   </div>
 </section>
 
-<!--
-  Embed template data as JSON for the runtime switcher.
-  Astro's define:vars would inline a JS object literal; using a JSON island
-  keeps this static + cacheable and avoids escaping pitfalls.
--->
-<script type="application/json" id="tpl-data" set:html={JSON.stringify(TEMPLATES)} />
+<style>
+  .tpl-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+  .tpl-filter {
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-2);
+    transition: all .15s;
+    cursor: pointer;
+  }
+  .tpl-filter:hover { color: var(--text); border-color: var(--border-strong); }
+  .tpl-filter.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  .tpl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  /* Hidden state controlled by the runtime filter — toggling is done by JS
+     setting `data-active-filter` on the grid; CSS reads each card's tags. */
+  .tpl-grid[data-active-filter="sd"]     .tpl-card:not([data-tags*="sd"]),
+  .tpl-grid[data-active-filter="smp"]    .tpl-card:not([data-tags*="smp"]),
+  .tpl-grid[data-active-filter="sma"]    .tpl-card:not([data-tags*="sma"]),
+  .tpl-grid[data-active-filter="smk"]    .tpl-card:not([data-tags*="smk"]),
+  .tpl-grid[data-active-filter="islam"]  .tpl-card:not([data-tags*="islam"]) {
+    display: none;
+  }
+
+  .tpl-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+  }
+  .tpl-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.5);
+  }
+
+  .tpl-card-frame {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .tpl-card-frame .browser-bar { padding: 8px 10px; }
+  .tpl-card-frame .browser-dots span { width: 8px; height: 8px; }
+  .tpl-card-frame .browser-url { font-size: 9.5px; padding: 3px 8px; }
+
+  /* Compact tpl-prev for card density. Same theming hooks as the original
+     stage; only sizing tightens. */
+  .tpl-prev--card { padding: 12px; min-height: 0; gap: 8px; height: calc(100% - 32px); }
+  .tpl-prev--card .hero-card { padding: 18px 14px; min-height: 110px; }
+  .tpl-prev--card .hero-card h4 { font-size: 14px; }
+  .tpl-prev--card .hero-card .sub { font-size: 8px; max-width: 140px; }
+  .tpl-prev--card .hero-card .cta { padding: 4px 9px; font-size: 8px; }
+  .tpl-prev--card .grid3 .c { padding: 8px; min-height: 50px; }
+  .tpl-prev--card .grid3 .c .num { font-size: 14px; }
+
+  .tpl-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tpl-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .tpl-card-head h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .tpl-card-mood {
+    font-size: 13px;
+    color: var(--text-3);
+    font-weight: 500;
+  }
+  .tpl-card-fit {
+    font-size: 13px;
+    color: var(--text-2);
+    margin-top: 4px;
+  }
+  .tpl-card-fit span {
+    color: var(--text-3);
+    font-weight: 500;
+  }
+  .tpl-card-cta {
+    margin-top: 10px;
+  }
+  .btn-sm {
+    padding: 9px 16px;
+    font-size: 13.5px;
+    border-radius: 9px;
+  }
+  .tpl-card-cta .btn { width: 100%; justify-content: center; }
+
+  @media (max-width: 980px) {
+    .tpl-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .tpl-grid { grid-template-columns: 1fr; }
+  }
+</style>

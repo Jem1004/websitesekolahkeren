@@ -1,90 +1,193 @@
 ---
+/**
+ * Contact / final CTA — funnels everything to WhatsApp.
+ *
+ * Replaces the previous 5-field form with a single dominant WA button.
+ * Email kept as a small secondary link for those who prefer async contact.
+ * Background uses an ambient blue/amber wash so this section reads as
+ * the page's visual finale.
+ */
 import { SITE } from '../config/site';
+import { waLink } from '../lib/wa';
 ---
 
-<section id="kontak">
+<section id="kontak" class="cta-final">
+  <div class="cta-glow" aria-hidden="true"></div>
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">→ Mulai Sekarang</span>
-      <h2>Siap Hadirkan Website Keren untuk Sekolah Anda?</h2>
-      <p>Konsultasi gratis, tanpa syarat. Ceritakan kebutuhan sekolah Anda dan kami bantu wujudkan.</p>
-    </div>
+    <div class="cta-card reveal">
+      <span class="cta-eyebrow">Konsultasi Gratis</span>
+      <h2>Siap Hadirkan Website Keren <br /><span class="gradient-text">untuk Sekolah Anda?</span></h2>
+      <p class="cta-lede">
+        Cerita kebutuhan sekolah Anda lewat WhatsApp. Tim kami balas cepat dan bantu rekomendasikan paket yang paling pas — tanpa komitmen apa-apa.
+      </p>
 
-    <div class="contact-grid reveal">
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="f-name">Nama Lengkap</label>
-            <input id="f-name" name="name" type="text" placeholder="Pak Budi Santoso" required />
-          </div>
-          <div class="form-field">
-            <label for="f-school">Nama Sekolah</label>
-            <input id="f-school" name="school" type="text" placeholder="SMK Negeri 1 Jakarta" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="f-wa">No. WhatsApp</label>
-            <input id="f-wa" name="wa" type="tel" placeholder="0812-3456-7890" required />
-          </div>
-          <div class="form-field">
-            <label for="f-city">Kota / Kabupaten</label>
-            <input id="f-city" name="city" type="text" placeholder="Jakarta Selatan" required />
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="f-msg">Pesan / Pertanyaan (opsional)</label>
-          <textarea id="f-msg" name="message" placeholder="Misal: kami butuh halaman PPDB online dengan formulir pendaftaran..."></textarea>
-        </div>
-        <div class="form-success" id="formSuccess">
-          ✓ Terima kasih! Tim kami akan menghubungi Anda via WhatsApp dalam 1×24 jam.
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Kirim &amp; Konsultasi Gratis
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </button>
-      </form>
+      <ul class="cta-reasons" aria-label="Alasan konsultasi via WhatsApp">
+        <li><span class="check">✓</span> Gratis &amp; tanpa syarat</li>
+        <li><span class="check">✓</span> Balas cepat di jam kerja</li>
+        <li><span class="check">✓</span> Konsultasi langsung dengan tim</li>
+      </ul>
 
-      <aside class="contact-info">
-        <h3>Atau hubungi langsung</h3>
-        <p class="sub">Pilih kanal yang paling nyaman buat Anda. Kami balas cepat di jam kerja.</p>
-        <a class="contact-chip wa" href={SITE.contact.waUrl} target="_blank" rel="noopener">
-          <span class="ico">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2z"></path>
-            </svg>
-          </span>
-          <div><div class="lbl">WhatsApp</div><div class="val">{SITE.contact.phone}</div></div>
-        </a>
-        <a class="contact-chip em" href={`mailto:${SITE.contact.email}`}>
-          <span class="ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-10 5L2 7"></path>
-            </svg>
-          </span>
-          <div><div class="lbl">Email</div><div class="val">{SITE.contact.email}</div></div>
-        </a>
-        <a class="contact-chip web" href={SITE.url}>
-          <span class="ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-          </span>
-          <div><div class="lbl">Website</div><div class="val">{SITE.url.replace('https://', '')}</div></div>
-        </a>
+      <a class="btn btn-wa-hero" href={waLink()} target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
+        </svg>
+        Chat WhatsApp Sekarang
+      </a>
 
-        <div class="contact-hours">
-          <strong>⏱ Jam Operasional</strong>
-          Senin – Jumat: 08.00 – 17.00 WIB<br />
-          Sabtu: 09.00 – 14.00 WIB
-        </div>
-      </aside>
+      <div class="cta-secondary">
+        atau email langsung ke
+        <a href={`mailto:${SITE.contact.email}`}>{SITE.contact.email}</a>
+      </div>
+
+      <div class="cta-hours">⏱ Senin–Jumat 08.00–17.00 WIB · Sabtu 09.00–14.00 WIB</div>
     </div>
   </div>
 </section>
+
+<style>
+  .cta-final {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+  }
+
+  /* Big diffuse glow that sells "this is the finale". Sits behind everything,
+     pointer-events disabled so it never blocks clicks. */
+  .cta-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .cta-glow::before, .cta-glow::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+  .cta-glow::before {
+    width: 520px; height: 520px;
+    background: var(--accent);
+    opacity: 0.25;
+    top: -100px; left: -120px;
+  }
+  .cta-glow::after {
+    width: 460px; height: 460px;
+    background: var(--accent-2);
+    opacity: 0.18;
+    bottom: -120px; right: -100px;
+  }
+
+  .cta-card {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 56px 40px;
+    background: color-mix(in oklab, var(--surface) 80%, transparent);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    box-shadow: var(--shadow);
+  }
+
+  .cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+  .cta-card h2 {
+    font-size: clamp(32px, 4.4vw, 46px);
+    margin-bottom: 18px;
+  }
+
+  .cta-lede {
+    font-size: 17px;
+    color: var(--text-2);
+    margin: 0 auto 28px;
+    max-width: 540px;
+    line-height: 1.6;
+  }
+
+  .cta-reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+  .cta-reasons li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .cta-reasons .check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.16);
+    color: var(--success);
+    display: grid; place-items: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* The single dominant CTA — bigger than any other button on the page. */
+  .btn-wa-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    background: #25D366;
+    color: #052e15;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px -10px rgba(37, 211, 102, 0.55);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-wa-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 50px -12px rgba(37, 211, 102, 0.65);
+  }
+
+  .cta-secondary {
+    margin-top: 22px;
+    font-size: 14px;
+    color: var(--text-3);
+  }
+  .cta-secondary a {
+    color: var(--text);
+    font-weight: 600;
+    border-bottom: 1px dashed var(--border-strong);
+    transition: border-color .15s, color .15s;
+  }
+  .cta-secondary a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .cta-hours {
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--text-3);
+  }
+
+  @media (max-width: 640px) {
+    .cta-final { padding: 80px 0; }
+    .cta-card { padding: 40px 24px; }
+    .cta-reasons { gap: 8px 16px; }
+    .btn-wa-hero { width: 100%; justify-content: center; padding: 16px 20px; font-size: 16px; }
+  }
+</style>
