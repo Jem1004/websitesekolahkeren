@@ -206,25 +206,17 @@ main, header, footer { position: relative; z-index: 2; }
   letter-spacing: -0.01em;
 }
 .logo-mark {
-  width: 30px; height: 30px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  display: grid; place-items: center;
-  color: #fff;
-  font-size: 14px;
-  box-shadow: 0 8px 22px -6px var(--accent-glow);
-  position: relative;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 }
-.logo-mark::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: 7px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  opacity: 1;
-  z-index: 0;
+.logo-mark img {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
-.logo-mark svg { position: relative; z-index: 1; }
 
 .nav-menu {
   display: flex;
