@@ -1,5 +1,65 @@
 /* ===== Theme tokens ===== */
+/*
+ * Light mode is the default. Premium minimal palette:
+ * - Pure white as primary canvas
+ * - Subtle off-white elevation surfaces (no warm tint, no cool slate)
+ * - Hairline borders with low opacity
+ * - Premium feel comes from clarity and spacing, not from color washes
+ *
+ * Reference aesthetic: Stripe, Linear, Vercel.
+ * Dark mode kept as opt-in via [data-theme="dark"].
+ */
 :root {
+  /* Surfaces — pure white primary, neutral off-white for elevation */
+  --bg: #FFFFFF;
+  --bg-2: #FAFAFA;          /* premium off-white, neutral */
+  --surface: #FFFFFF;
+  --surface-2: #F7F7F8;     /* slightly elevated surface */
+
+  /* Hairline borders — very subtle, neutral */
+  --border: rgba(15, 23, 42, 0.06);
+  --border-strong: rgba(15, 23, 42, 0.12);
+
+  /* Text — slate, professional and crisp */
+  --text: #0F172A;
+  --text-2: #475569;        /* slate-600 — comfortable secondary */
+  --text-3: #94A3B8;        /* slate-400 — for muted helper text */
+
+  /* Primary action — blue (deeper for premium feel) */
+  --accent: #1D4ED8;
+  --accent-hover: #1E40AF;
+  --accent-soft: #EFF6FF;
+  --accent-glow: rgba(29, 78, 216, 0.18);
+
+  /* Brand accent — orange (matches rocket logo, used sparingly) */
+  --accent-2: #F97316;
+  --accent-2-hover: #EA580C;
+  --accent-2-soft: #FFF7ED;
+  --accent-2-glow: rgba(249, 115, 22, 0.20);
+
+  /* Status */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  /* Premium shadow system — soft, layered, subtle */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow: 0 4px 8px -2px rgba(15, 23, 42, 0.04), 0 12px 24px -8px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 16px -4px rgba(15, 23, 42, 0.05), 0 24px 48px -12px rgba(15, 23, 42, 0.12);
+
+  --container: 1200px;
+
+  /* WhatsApp brand colors */
+  --wa-green: #25D366;
+  --wa-green-text: #052e15;
+  --wa-green-glow: rgba(37, 211, 102, 0.40);
+}
+
+/* Opt-in dark theme */
+[data-theme="dark"] {
   --bg: #0A0F1E;
   --bg-2: #0E1424;
   --surface: #111827;
@@ -9,35 +69,11 @@
   --text: #F9FAFB;
   --text-2: #C7CCD6;
   --text-3: #8A93A6;
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
-  --accent-2: #F59E0B;
-  --accent-soft: rgba(37, 99, 235, 0.14);
-  --accent-glow: rgba(37, 99, 235, 0.40);
-  --success: #10B981;
-  --radius: 14px;
-  --radius-lg: 22px;
+  --accent-soft: rgba(29, 78, 216, 0.14);
+  --accent-glow: rgba(29, 78, 216, 0.40);
+  --accent-2-soft: rgba(249, 115, 22, 0.14);
+  --accent-2-glow: rgba(249, 115, 22, 0.45);
   --shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 8px 30px -10px rgba(0, 0, 0, 0.4);
-  --container: 1200px;
-  /* WhatsApp brand colors — fixed by brand, defined as variables for consistency */
-  --wa-green: #25D366;
-  --wa-green-text: #052e15;
-  --wa-green-glow: rgba(37, 211, 102, 0.55);
-}
-
-[data-theme="light"] {
-  --bg: #F8FAFC;
-  --bg-2: #FFFFFF;
-  --surface: #FFFFFF;
-  --surface-2: #F1F5F9;
-  --border: rgba(15, 23, 42, 0.08);
-  --border-strong: rgba(15, 23, 42, 0.14);
-  --text: #0F172A;
-  --text-2: #334155;
-  --text-3: #64748B;
-  --accent-soft: rgba(37, 99, 235, 0.10);
-  --accent-glow: rgba(37, 99, 235, 0.22);
-  --shadow: 0 24px 60px -20px rgba(15, 23, 42, 0.18), 0 6px 24px -10px rgba(15, 23, 42, 0.10);
 }
 
 [data-accent="emerald"] { --accent: #10B981; --accent-2: #F59E0B; --accent-soft: rgba(16, 185, 129, 0.14); --accent-glow: rgba(16, 185, 129, 0.45); }
@@ -139,27 +175,51 @@ img { max-width: 100%; display: block; }
 .bg-ambient::before, .bg-ambient::after {
   content: "";
   position: absolute;
-  width: 700px;
-  height: 700px;
   border-radius: 50%;
   filter: blur(120px);
+}
+/* Light mode (default) — premium clean: no blob, just subtle dot pattern */
+.bg-ambient::before,
+.bg-ambient::after {
+  display: none;
+}
+/* Premium dot grid — barely visible, adds depth without noise */
+.bg-ambient {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 30%, transparent 80%);
+}
+/* Dark mode — original two-color ambient, restore the blobs */
+[data-theme="dark"] .bg-ambient {
+  background-image: none;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+[data-theme="dark"] .bg-ambient::before,
+[data-theme="dark"] .bg-ambient::after {
+  display: block;
+}
+[data-theme="dark"] .bg-ambient::before {
+  width: 700px; height: 700px;
+  background: var(--accent);
+  top: -200px; left: -150px;
   opacity: 0.35;
 }
-.bg-ambient::before {
-  background: var(--accent);
-  top: -200px;
-  left: -150px;
-}
-.bg-ambient::after {
+[data-theme="dark"] .bg-ambient::after {
+  width: 700px; height: 700px;
   background: var(--accent-2);
-  top: 200px;
-  right: -200px;
+  top: 200px; right: -200px;
   opacity: 0.22;
 }
-[data-theme="light"] .bg-ambient::before { opacity: 0.12; }
-[data-theme="light"] .bg-ambient::after { opacity: 0.08; }
 
+/* Noise — only in dark mode, hidden in light for crispness */
 .noise {
+  display: none;
+}
+[data-theme="dark"] .noise {
+  display: block;
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -168,7 +228,6 @@ img { max-width: 100%; display: block; }
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMDAnIGhlaWdodD0nMjAwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45JyBudW1PY3RhdmVzPScyJy8+PGZlQ29sb3JNYXRyaXggdmFsdWVzPScwIDAgMCAwIDEgIDAgMCAwIDAgMSAgMCAwIDAgMCAxICAwIDAgMCAwLjA4IDAnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCglMjNuKScvPjwvc3ZnPg==");
 }
-[data-theme="light"] .noise { opacity: 0.3; mix-blend-mode: multiply; }
 
 main, header, footer { position: relative; z-index: 2; }
 
@@ -284,12 +343,31 @@ main, header, footer { position: relative; z-index: 2; }
 
 /* ===== Section base ===== */
 section { padding: 110px 0; position: relative; }
+
+/* Alternating sections — adds rhythm to the page without heavy color blocks.
+   Apply to even-indexed sections to break up the long white canvas. */
+section.section-alt {
+  background: var(--bg-2);
+}
+/* Soft top/bottom hairline to mark section transitions */
+section.section-alt::before,
+section.section-alt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+section.section-alt::before { top: 0; }
+section.section-alt::after { bottom: 0; }
+
 .section-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
 .section-head h2 { font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 16px; }
 .section-head p { font-size: 17px; color: var(--text-3); }
 
 .gradient-text {
-  background: linear-gradient(120deg, var(--text) 0%, var(--accent) 50%, var(--accent-2) 100%);
+  background: linear-gradient(120deg, var(--text) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -326,7 +404,7 @@ section { padding: 110px 0; position: relative; }
   color: var(--text-2);
 }
 .hero-eyebrow .pill {
-  background: var(--accent);
+  background: var(--accent-2);
   color: #fff;
   padding: 3px 10px;
   border-radius: 999px;
@@ -360,8 +438,8 @@ section { padding: 110px 0; position: relative; }
 .trust-badges .check {
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
   display: grid; place-items: center;
   font-size: 11px;
   flex-shrink: 0;
@@ -469,7 +547,7 @@ section { padding: 110px 0; position: relative; }
 .chip-1 { top: 14%; left: -34px; animation-delay: 0s; }
 .chip-1 .ico { background: rgba(16, 185, 129, 0.18); color: #10B981; }
 .chip-2 { bottom: 16%; right: -28px; animation-delay: 1.5s; }
-.chip-2 .ico { background: var(--accent-soft); color: var(--accent); }
+.chip-2 .ico { background: var(--accent-2-soft); color: var(--accent-2); }
 
 /* ===== Problem section ===== */
 .problem-grid {
@@ -484,6 +562,28 @@ section { padding: 110px 0; position: relative; }
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+/* Top accent line — subtle premium detail */
+.problem-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.problem-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+.problem-card:hover::before {
+  opacity: 1;
 }
 .problem-card .icon {
   width: 52px; height: 52px;
@@ -535,8 +635,8 @@ section { padding: 110px 0; position: relative; }
 .bento-card .ico {
   width: 44px; height: 44px;
   border-radius: 12px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
   display: grid; place-items: center;
 }
 .bento-card .ico svg { width: 22px; height: 22px; }
@@ -649,7 +749,7 @@ section { padding: 110px 0; position: relative; }
 .tpl-info .sub { font-size: 14px; color: var(--text-3); margin-bottom: 18px; }
 .tpl-info .features { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; padding: 0; list-style: none; }
 .tpl-info .features li { display: flex; gap: 10px; font-size: 14px; color: var(--text-2); align-items: flex-start; }
-.tpl-info .features li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+.tpl-info .features li::before { content: "✓"; color: var(--accent-2); font-weight: 700; }
 .tpl-info .meta { display: flex; gap: 14px; margin-bottom: 24px; }
 .tpl-info .meta .item { font-size: 12px; color: var(--text-3); }
 .tpl-info .meta .item strong { display: block; color: var(--text); font-size: 15px; margin-top: 2px; }
@@ -724,19 +824,44 @@ section { padding: 110px 0; position: relative; }
   padding: 28px 24px;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+/* Step accent — vertical line on the left (decoration → orange) */
+.step::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 0;
+  width: 3px;
+  background: var(--accent-2);
+  border-radius: 0 3px 3px 0;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+.step:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 .step .num {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 56px;
   font-weight: 800;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent-2);
   margin-bottom: 18px;
   letter-spacing: -0.04em;
 }
 .step h3 { font-size: 18px; margin-bottom: 8px; font-family: 'Plus Jakarta Sans', sans-serif; }
 .step p { font-size: 14px; color: var(--text-3); line-height: 1.55; }
-.step .duration { display: inline-flex; margin-top: 14px; font-size: 12px; padding: 3px 10px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; font-weight: 600; }
+.step .duration { display: inline-flex; margin-top: 14px; font-size: 12px; padding: 3px 10px; background: var(--accent-2-soft); color: var(--accent-2); border-radius: 999px; font-weight: 600; }
 
 /* ===== Pricing ===== */
 .pricing-grid {
@@ -754,16 +879,22 @@ section { padding: 110px 0; position: relative; }
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.price-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 .price-card.popular {
-  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 6%, var(--surface)) 0%, var(--surface) 100%);
-  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
-  box-shadow: 0 30px 80px -30px var(--accent-glow);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent-2) 4%, var(--surface)) 0%, var(--surface) 100%);
+  border-color: color-mix(in oklab, var(--accent-2) 30%, transparent);
+  box-shadow: var(--shadow), 0 0 0 1px color-mix(in oklab, var(--accent-2) 20%, transparent);
 }
 .price-card .pop-badge {
   position: absolute;
   top: -12px; left: 32px;
-  background: var(--accent);
+  background: var(--accent-2);
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 11px;
@@ -771,7 +902,7 @@ section { padding: 110px 0; position: relative; }
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
-  box-shadow: 0 4px 12px -2px var(--accent-glow);
+  box-shadow: 0 4px 12px -2px var(--accent-2-glow);
 }
 .price-card .tier { font-size: 13px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 6px; }
 .price-card .name { font-size: 22px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; margin-bottom: 4px; }
@@ -789,8 +920,8 @@ section { padding: 110px 0; position: relative; }
 .price-card ul.benefits .ck {
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
   display: grid; place-items: center;
   font-size: 11px;
   flex-shrink: 0;
@@ -809,9 +940,17 @@ section { padding: 110px 0; position: relative; }
   background: var(--surface);
   margin-bottom: 12px;
   overflow: hidden;
-  transition: border-color .2s;
+  box-shadow: var(--shadow-sm);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
 }
-.faq-item[open] { border-color: var(--border-strong); }
+.faq-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+.faq-item[open] {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
 .faq-item summary {
   list-style: none;
   padding: 22px 26px;
@@ -929,37 +1068,8 @@ section { padding: 110px 0; position: relative; }
 .contact-hours strong { color: var(--text); display: block; margin-bottom: 6px; }
 
 /* ===== Footer ===== */
-footer {
-  padding: 70px 0 30px;
-  border-top: 1px solid var(--border);
-  background: color-mix(in oklab, var(--bg) 60%, black);
-}
-[data-theme="light"] footer { background: var(--surface-2); }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-.footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); }
-.footer-col ul { padding: 0; margin: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { font-size: 14.5px; color: var(--text-2); transition: color .15s; }
-.footer-col ul a:hover { color: var(--text); }
-.footer-brand p { font-size: 14px; color: var(--text-3); margin-top: 14px; max-width: 320px; line-height: 1.6; }
-.footer-bottom {
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: var(--text-3);
-}
-.footer-socials { display: flex; gap: 8px; }
-.footer-socials a { width: 38px; height: 38px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border); display: grid; place-items: center; color: var(--text-2); transition: all .15s; }
-.footer-socials a:hover { color: var(--accent); border-color: var(--accent); }
+/* Footer styling lives in Footer.astro (scoped, premium dark theme).
+   The global selectors below have been removed to prevent conflicts. */
 
 /* ===== Floating WA ===== */
 .wa-float {
@@ -1021,8 +1131,6 @@ footer {
   .steps { grid-template-columns: 1fr 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; padding: 28px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .footer-brand { grid-column: span 2; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
@@ -1031,7 +1139,5 @@ footer {
   .bento { grid-template-columns: 1fr; }
   .bento-card.feature-tall, .bento-card.feature-wide, .bento-card.feature-md, .bento-card.feature-sm { grid-column: span 1; }
   .steps { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-brand { grid-column: span 1; }
   .trust-badges { grid-template-columns: 1fr; }
 }

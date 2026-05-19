@@ -32,13 +32,25 @@ const orgSchema = {
   '@type': 'Organization',
   '@id': `${SITE.url}#organization`,
   name: SITE.name,
+  // Alternate names — helps Google associate brand variants with this entity
+  alternateName: [
+    'web sekolah keren',
+    'website sekolah keren',
+    'websitesekolah',
+    'web sekolah',
+    'websekolah',
+  ],
   url: SITE.url,
-  logo: new URL('/icon.svg', SITE.url).toString(),
+  logo: new URL('/logo.svg', SITE.url).toString(),
   description: SITE.description,
   email: SITE.contact.email,
   telephone: SITE.contact.phone,
   foundingDate: String(SITE.business.foundingYear),
   areaServed: { '@type': 'Country', name: SITE.business.serviceArea },
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Astro Digital Solution',
+  },
   sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.youtube],
 };
 
@@ -48,6 +60,7 @@ const websiteSchema = {
   '@id': `${SITE.url}#website`,
   url: SITE.url,
   name: SITE.name,
+  alternateName: ['websekolahkeren', 'website sekolah keren', 'websekolah'],
   description: SITE.description,
   inLanguage: SITE.locale,
   publisher: { '@id': `${SITE.url}#organization` },

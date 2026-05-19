@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // Production site URL. Update if you switch domains.
-const SITE_URL = 'https://websitesekolahkeren.id';
+const SITE_URL = 'https://websekolahkeren.id';
 
 export default defineConfig({
   site: SITE_URL,

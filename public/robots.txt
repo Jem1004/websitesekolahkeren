@@ -6,4 +6,4 @@ Disallow: /api/
 Disallow: /_assets/
 
 # Sitemap reference helps every major crawler
-Sitemap: https://websitesekolahkeren.id/sitemap-index.xml
+Sitemap: https://websekolahkeren.id/sitemap-index.xml
