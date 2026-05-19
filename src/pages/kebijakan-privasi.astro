@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config/site';
+
+const lastUpdated = '1 Januari 2026';
+---
+
+<Layout
+  title="Kebijakan Privasi — websekolahkeren"
+  description="Kebijakan privasi layanan websekolahkeren dari Astro Digital Solution. Pelajari bagaimana kami mengelola data Anda."
+  noindex={false}
+  pathname="/kebijakan-privasi"
+>
+  <div class="legal-page">
+    <div class="container">
+      <!-- Back link -->
+      <a href="/" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5"/><path d="m12 5-7 7 7 7"/>
+        </svg>
+        Kembali ke beranda
+      </a>
+
+      <header class="legal-header">
+        <p class="legal-brand">websekolahkeren · Astro Digital Solution</p>
+        <h1>Kebijakan Privasi</h1>
+        <p class="legal-meta">Terakhir diperbarui: {lastUpdated}</p>
+      </header>
+
+      <div class="legal-body">
+
+        <p class="legal-intro">
+          Astro Digital Solution menghormati privasi Anda. Kebijakan ini menjelaskan data apa yang kami kumpulkan, bagaimana kami menggunakannya, dan hak Anda atas data tersebut.
+        </p>
+
+        <section class="legal-section">
+          <h2>1. Data yang kami kumpulkan</h2>
+          <p>Kami mengumpulkan data yang Anda berikan secara langsung saat menggunakan layanan websekolahkeren, meliputi:</p>
+          <ul>
+            <li><strong>Data identitas:</strong> nama, nama sekolah, jabatan.</li>
+            <li><strong>Data kontak:</strong> nomor WhatsApp, alamat email.</li>
+            <li><strong>Data konten:</strong> logo, foto, teks, dan informasi sekolah yang Anda kirimkan untuk dimasukkan ke website.</li>
+            <li><strong>Data teknis:</strong> alamat IP, jenis browser, dan halaman yang dikunjungi — dikumpulkan secara otomatis saat Anda mengakses website ini.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>2. Bagaimana kami menggunakan data</h2>
+          <ul>
+            <li>Memproses dan menyelesaikan pesanan layanan website sekolah.</li>
+            <li>Berkomunikasi dengan Anda terkait status pengerjaan, revisi, dan perpanjangan layanan.</li>
+            <li>Mengirimkan informasi penting terkait layanan yang Anda gunakan.</li>
+            <li>Meningkatkan kualitas layanan berdasarkan umpan balik dan pola penggunaan.</li>
+          </ul>
+          <p>Kami tidak menggunakan data Anda untuk keperluan iklan pihak ketiga.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>3. Penyimpanan dan keamanan data</h2>
+          <ul>
+            <li>Data konten website disimpan di server cloud yang terenkripsi.</li>
+            <li>Akses ke data dibatasi hanya untuk anggota tim yang membutuhkan dalam proses pengerjaan.</li>
+            <li>Kami menggunakan protokol HTTPS untuk semua komunikasi data.</li>
+            <li>Data klien yang tidak aktif (tidak memperpanjang layanan) dihapus permanen setelah 30 hari masa tenggang.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>4. Berbagi data dengan pihak ketiga</h2>
+          <p>Kami tidak menjual atau menyewakan data Anda kepada pihak ketiga. Data hanya dibagikan kepada:</p>
+          <ul>
+            <li><strong>Penyedia hosting dan domain</strong> — untuk keperluan teknis operasional website Anda.</li>
+            <li><strong>Pihak berwenang</strong> — jika diwajibkan oleh hukum yang berlaku di Indonesia.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>5. Cookie dan pelacakan</h2>
+          <p>Website ini menggunakan cookie teknis yang diperlukan untuk fungsi dasar halaman. Kami tidak menggunakan cookie pelacakan iklan atau analitik pihak ketiga yang mengidentifikasi Anda secara personal.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>6. Hak Anda atas data</h2>
+          <p>Anda berhak untuk:</p>
+          <ul>
+            <li>Meminta salinan data pribadi yang kami simpan tentang Anda.</li>
+            <li>Meminta koreksi data yang tidak akurat.</li>
+            <li>Meminta penghapusan data Anda, dengan catatan hal ini dapat mengakhiri layanan yang sedang berjalan.</li>
+            <li>Menarik persetujuan penggunaan data kapan saja.</li>
+          </ul>
+          <p>Untuk mengajukan permintaan terkait data, hubungi kami melalui kontak di bawah.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>7. Data anak di bawah umur</h2>
+          <p>Layanan websekolahkeren ditujukan untuk institusi pendidikan, bukan individu di bawah 18 tahun. Kami tidak secara sengaja mengumpulkan data pribadi dari anak di bawah umur. Jika Anda menemukan hal ini terjadi, segera hubungi kami.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>8. Perubahan kebijakan privasi</h2>
+          <p>Kami dapat memperbarui kebijakan ini sewaktu-waktu. Perubahan signifikan akan diinformasikan melalui email atau WhatsApp yang terdaftar. Tanggal pembaruan terakhir selalu tercantum di bagian atas halaman ini.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>9. Kontak</h2>
+          <p>Pertanyaan atau permintaan terkait privasi data dapat disampaikan melalui:</p>
+          <ul>
+            <li>Email: <a href={`mailto:${SITE.contact.email}`}>{SITE.contact.email}</a></li>
+            <li>WhatsApp: <a href={SITE.contact.waUrl} target="_blank" rel="noopener">{SITE.contact.phone}</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page {
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .legal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-3);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color .15s;
+  }
+  .legal-back:hover { color: var(--text); }
+
+  .legal-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-brand {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+  .legal-header h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    color: var(--text);
+  }
+  .legal-meta {
+    font-size: 13.5px;
+    color: var(--text-3);
+    margin: 0;
+  }
+
+  .legal-body {
+    max-width: 720px;
+  }
+
+  .legal-intro {
+    font-size: 16px;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin: 0 0 40px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .legal-section {
+    margin-bottom: 36px;
+  }
+  .legal-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .legal-section p {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin: 0 0 12px;
+  }
+  .legal-section ul {
+    padding: 0 0 0 20px;
+    margin: 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .legal-section li {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.65;
+  }
+  .legal-section a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed color-mix(in oklab, var(--accent) 50%, transparent);
+  }
+  .legal-section a:hover {
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .legal-page { padding: 100px 0 60px; }
+  }
+</style>
