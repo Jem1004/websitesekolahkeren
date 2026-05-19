@@ -4,14 +4,14 @@
  */
 export const SITE = {
   url: 'https://websitesekolahkeren.id',
-  name: 'Website Sekolah Keren',
-  shortName: 'SekolahKeren',
+  name: 'websekolahkeren',
+  shortName: 'websekolahkeren',
   locale: 'id-ID',
   language: 'id',
   // Primary brand pitch — kept under 60 chars where possible for SERP.
-  title: 'Website Sekolah Keren — Website Sekolah Modern, Bukan Sekadar Tampilan',
+  title: 'websekolahkeren — Website Sekolah Modern, CMS Mudah, Harga All-In',
   description:
-    'Solusi digital lengkap untuk sekolah Indonesia. Website sekolah modern berbasis CMS dengan teknologi Next.js. Mulai Rp 1,1 juta — domain & hosting opsional.',
+    'Website sekolah modern dengan CMS mudah dikelola sendiri. Domain .sch.id dan hosting sudah termasuk. Fitur bisa disesuaikan request sekolah. Mulai Rp 1,1 juta.',
   keywords: [
     'website sekolah keren',
     'jasa pembuatan website sekolah',
@@ -27,16 +27,11 @@ export const SITE = {
     'website ppdb online',
   ],
   contact: {
-    email: 'halo@websitesekolahkeren.id',
-    phone: '+6281234567890',
-    waNumber: '6281234567890', // wa.me format (no plus, no leading zero)
-    waUrl: 'https://wa.me/6281234567890',
-    /**
-     * WhatsApp pre-filled message. Encoded once at build time and appended to
-     * waUrl when used as a CTA. Keeps the message single-source so we don't
-     * end up with three different opening lines on three different buttons.
-     */
-    waMessage: 'Halo, saya tertarik dengan jasa Website Sekolah Keren. Boleh info lebih lanjut soal paketnya?',
+    email: 'websekolahkeren@gmail.com',
+    phone: '+6287784451080',
+    waNumber: '6287784451080', // wa.me format (no plus, no leading zero)
+    waUrl: 'https://wa.me/6287784451080',
+    waMessage: 'Halo, saya tertarik dengan websekolahkeren. Boleh info lebih lanjut soal paket dan fiturnya?',
   },
   social: {
     instagram: 'https://instagram.com/websitesekolahkeren',

@@ -15,37 +15,37 @@ export const FAQS: Faq[] = [
   {
     q: 'Apakah saya perlu bisa coding untuk mengelola website ini?',
     answerHTML:
-      'Tidak sama sekali. Semua konten — berita, foto, profil, menu — dikelola lewat panel admin yang mudah digunakan, mirip seperti mengisi formulir. Jika Anda terbiasa pakai WhatsApp atau Instagram, Anda pasti bisa.',
+      'Tidak sama sekali. Semua konten — berita, foto, profil, menu — dikelola lewat panel admin yang sederhana, mirip mengisi formulir online. Kalau terbiasa pakai WhatsApp atau media sosial, pasti langsung bisa.',
     open: true,
   },
   {
     q: 'Berapa lama proses pembuatan website?',
     answerHTML:
-      'Estimasi 5–10 hari kerja setelah semua konten dan data dari sekolah diterima lengkap. Untuk paket Lengkap dengan fitur custom, durasi bisa sedikit lebih panjang tergantung kompleksitas request.',
+      'Maksimal 3 hari kerja setelah konten dan data dari sekolah diterima lengkap. Hari pertama konsultasi dan pilih template, hari kedua pengumpulan konten, hari ketiga website sudah live.',
   },
   {
-    q: 'Apakah tampilan website bisa disesuaikan dengan warna sekolah kami?',
+    q: 'Apakah harga Rp 1,1 juta itu per tahun? Apa saja yang sudah termasuk?',
     answerHTML:
-      'Ya! Warna utama, logo, dan font bisa disesuaikan dengan identitas visual sekolah Anda. Kami akan diskusikan pilihan palet warna saat tahap konsultasi awal.',
+      'Ya, Rp 1.100.000 per tahun dan sudah <strong>all-in</strong> — termasuk domain .sch.id dan hosting cloud. Tidak ada biaya tambahan saat perpanjangan. Harga perpanjangan sama dengan harga pertama.',
   },
   {
-    q: 'Apakah ada biaya tahunan setelah pembuatan?',
+    q: 'Bagaimana kalau website bermasalah atau ada yang perlu diperbaiki?',
     answerHTML:
-      'Website menggunakan domain dan hosting yang perlu diperpanjang setiap tahun (biaya terpisah, sekitar Rp 300.000–600.000/tahun tergantung provider). Kami <strong>tidak memungut biaya langganan</strong> untuk sistem CMS-nya — sekali bayar, milik Anda selamanya.',
+      'Kami menyediakan support via WhatsApp dengan respons cepat di jam kerja. Untuk masalah teknis, kami tangani langsung — tidak perlu menunggu berhari-hari seperti vendor konvensional. Paket Pro mendapat prioritas support 30 hari pertama.',
   },
   {
-    q: 'Bagaimana jika kami butuh fitur yang tidak ada di daftar?',
+    q: 'Apa itu e-rapor di Paket Pro? Bagaimana cara kerjanya?',
     answerHTML:
-      'Kami membuka request fitur! Diskusikan kebutuhan Anda saat konsultasi dan kami akan evaluasi untuk dimasukkan ke dalam scope pekerjaan. Untuk fitur kompleks, mungkin ada penyesuaian harga.',
+      'E-rapor adalah sistem penilaian digital berbasis Windows Server yang terintegrasi dengan website sekolah. Guru bisa input nilai langsung dari browser, dan rapor bisa dicetak tanpa perlu software tambahan. Cocok untuk sekolah yang ingin digitalisasi proses penilaian.',
   },
   {
-    q: 'Apakah website ini aman dari hacking?',
+    q: 'Apakah tampilan dan fitur bisa disesuaikan dengan kebutuhan sekolah kami?',
     answerHTML:
-      'Website dibangun dengan Next.js dan sistem autentikasi NextAuth.js. Setiap akun admin dilindungi dengan password terenkripsi (bcrypt) dan sistem hak akses berlapis (RBAC). Data tersimpan di cloud storage Amazon S3 yang ter-enkripsi.',
+      'Ya. Warna, logo, dan font bisa disesuaikan dengan identitas sekolah. Fitur dan halaman juga bisa di-request — ini salah satu keunggulan websekolahkeren. Website berkembang sesuai kebutuhan sekolah, bukan sebaliknya.',
   },
   {
-    q: 'Apakah bisa dipakai untuk sekolah swasta juga?',
+    q: 'Apakah bisa dipakai untuk semua jenjang sekolah?',
     answerHTML:
-      'Tentu saja! Sistem ini cocok untuk SD, SMP, SMA, SMK — baik negeri maupun swasta, termasuk sekolah Islam, pesantren modern, dan sekolah teknologi/vokasi.',
+      'Tentu. websekolahkeren cocok untuk SD, SMP, SMA, SMK — negeri maupun swasta, termasuk sekolah Islam dan pesantren modern. Kami punya template yang dirancang untuk karakter masing-masing jenjang.',
   },
 ];

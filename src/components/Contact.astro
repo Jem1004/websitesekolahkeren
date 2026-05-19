@@ -1,377 +1,430 @@
 ---
 /**
- * Contact / Final CTA
- *
- * Inspired by webekspor's section 07 pattern:
- * - Full-width section with strong background contrast (not a card)
- * - Large headline left-aligned, CTAs on the right
- * - Horizontal layout: copy | actions
- * - Trust chips below the headline
- * - Sticky mini-CTA bar just above the footer
+ * Contact / Final CTA — Dynamic, Friendly Minimalist
  */
 import { SITE } from '../config/site';
 import { waLink } from '../lib/wa';
 ---
 
-<!-- ===== MAIN CTA SECTION ===== -->
 <section id="kontak" class="cta-section">
-  <!-- Decorative background elements -->
-  <div class="cta-bg" aria-hidden="true">
-    <div class="cta-bg-blob cta-bg-blob--1"></div>
-    <div class="cta-bg-blob cta-bg-blob--2"></div>
-    <div class="cta-bg-grid"></div>
-  </div>
-
   <div class="container">
-    <div class="cta-inner reveal">
-      <!-- Left: copy -->
-      <div class="cta-copy">
-        <div class="cta-label">
-          <span class="cta-label-dot"></span>
-          KONSULTASI GRATIS · BALAS CEPAT · TANPA KOMITMEN
+    <div class="cta-card reveal" aria-labelledby="cta-headline">
+      
+      <!-- Dynamic Background Elements -->
+      <div class="ambient-blob blob-1"></div>
+      <div class="ambient-blob blob-2"></div>
+      
+      <div class="cta-layout">
+        
+        <!-- Left: Friendly Text -->
+        <div class="cta-text">
+          <div class="greeting-pill">
+            <div class="avatar-circle">
+              <span class="emoji">👋</span>
+            </div>
+            <div class="greeting-info">
+              <span class="greeting-hi">Halo, siap diskusi?</span>
+              <span class="greeting-name">Tim {SITE.name}</span>
+            </div>
+          </div>
+          
+          <h2 id="cta-headline" class="cta-headline">
+            Mari wujudkan <span class="text-gradient">website modern</span> untuk sekolah Anda
+          </h2>
+          <p class="cta-message">
+            Tanya-tanya dulu boleh banget! Kami siap bantu pilihkan desain yang pas, jawab pertanyaan teknis, dan buatkan demo khusus tanpa biaya komitmen apapun.
+          </p>
+
+          <div class="friendly-badges">
+            <div class="f-badge">
+              <span class="pulse-dot green"></span>
+              <span>Balasan cepat</span>
+            </div>
+            <div class="f-badge">
+              <span class="pulse-dot blue"></span>
+              <span>Konsultasi gratis</span>
+            </div>
+          </div>
         </div>
-        <h2 class="cta-headline">
-          Saatnya sekolah Anda<br />
-          <span class="cta-headline-accent">hadir di internet.</span>
-        </h2>
-        <p class="cta-sub">
-          Ceritakan kebutuhan sekolah Anda lewat WhatsApp. Tim kami bantu rekomendasikan paket yang paling pas — mulai dari Rp&nbsp;1,1&nbsp;juta.
-        </p>
-        <ul class="cta-chips" aria-label="Keunggulan layanan">
-          <li>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Gratis &amp; tanpa syarat
-          </li>
-          <li>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Selesai 5–10 hari kerja
-          </li>
-          <li>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Sekali bayar, milik selamanya
-          </li>
-        </ul>
-      </div>
 
-      <!-- Right: actions -->
-      <div class="cta-actions">
-        <a class="cta-btn-wa" href={waLink()} target="_blank" rel="noopener">
-          <span class="cta-btn-wa-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
-            </svg>
-          </span>
-          <span class="cta-btn-wa-text">
-            <span class="cta-btn-wa-main">Chat WhatsApp Sekarang</span>
-            <span class="cta-btn-wa-hint">Biasanya balas dalam 1 jam</span>
-          </span>
-          <svg class="cta-btn-wa-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-          </svg>
-        </a>
-
-        <a class="cta-btn-email" href={`mailto:${SITE.contact.email}`}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            <path d="m22 7-10 5L2 7"></path>
-          </svg>
-          {SITE.contact.email}
-        </a>
-
-        <p class="cta-hours">⏱ Senin–Jumat 08.00–17.00 · Sabtu 09.00–14.00 WIB</p>
+        <!-- Right: Action Card -->
+        <div class="cta-actions">
+          <div class="floating-action-card">
+            
+            <a class="btn-wa-massive" href={waLink()} target="_blank" rel="noopener">
+              <div class="wa-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"/>
+                </svg>
+              </div>
+              <div class="wa-text-wrapper">
+                <span class="wa-title">Chat via WhatsApp</span>
+                <span class="wa-subtitle">Jalur paling responsif</span>
+              </div>
+            </a>
+            
+            <div class="divider">
+              <span>atau butuh proposal resmi?</span>
+            </div>
+            
+            <a class="btn-email-soft" href={`mailto:${SITE.contact.email}`}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <path d="m2 6 10 7 10-7"></path>
+              </svg>
+              Kirim Email
+            </a>
+            
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== STICKY MINI CTA BAR (above footer) ===== -->
-<div class="cta-bar">
-  <div class="container">
-    <div class="cta-bar-inner">
-      <p class="cta-bar-text">
-        <strong>Siap bikin website sekolah?</strong>
-        Mulai dari Rp&nbsp;1,1&nbsp;juta — sekali bayar.
-      </p>
-      <a class="cta-bar-btn" href={waLink()} target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2z"></path>
-        </svg>
-        Konsultasi Gratis
-      </a>
-    </div>
-  </div>
-</div>
-
 <style>
-  /* ── Main CTA section ─────────────────────────────────────────────── */
   .cta-section {
-    position: relative;
     padding: 120px 0;
+    position: relative;
     overflow: hidden;
-    /* Distinct background — darker than the page bg so it reads as a finale */
-    background: color-mix(in oklab, var(--bg) 40%, #000);
-    border-top: 1px solid var(--border-strong);
   }
 
-  /* Decorative background */
-  .cta-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  /* Main Card: Softer, larger radius, dynamic feel */
+  .cta-card {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 64px;
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.2), 0 10px 40px -10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  [data-theme="light"] .cta-card {
+    box-shadow: 0 30px 80px -20px rgba(15, 23, 42, 0.1), 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  }
 
-  .cta-bg-blob {
+  /* Floating blobs for dynamic aesthetic */
+  .ambient-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: slowFloat 8s ease-in-out infinite alternate;
   }
-  .cta-bg-blob--1 {
-    width: 600px; height: 600px;
+  [data-theme="light"] .ambient-blob {
+    opacity: 0.15;
+  }
+  
+  .blob-1 {
+    width: 400px;
+    height: 400px;
     background: var(--accent);
-    opacity: 0.22;
-    top: -180px; left: -160px;
+    top: -150px;
+    left: -100px;
   }
-  .cta-bg-blob--2 {
-    width: 500px; height: 500px;
+  
+  .blob-2 {
+    width: 300px;
+    height: 300px;
     background: var(--accent-2);
-    opacity: 0.14;
-    bottom: -160px; right: -120px;
+    bottom: -100px;
+    right: 10%;
+    animation-delay: -4s;
   }
 
-  /* Subtle dot-grid overlay — gives depth without being noisy */
-  .cta-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  @keyframes slowFloat {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-30px) scale(1.05); }
   }
 
-  /* ── Inner layout: copy | actions ────────────────────────────────── */
-  .cta-inner {
+  /* Layout grid */
+  .cta-layout {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 64px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
     align-items: center;
   }
 
-  /* ── Copy side ────────────────────────────────────────────────────── */
-  .cta-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--text-3);
-    text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-  .cta-label-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--success);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-    animation: dot-pulse 2s ease-in-out infinite;
-    flex-shrink: 0;
-  }
-  @keyframes dot-pulse {
-    0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25); }
-    50%       { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
-  }
-
-  .cta-headline {
-    font-size: clamp(38px, 5vw, 62px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    margin-bottom: 20px;
-    color: var(--text);
-  }
-  .cta-headline-accent {
-    background: linear-gradient(120deg, var(--text) 0%, var(--accent) 55%, var(--accent-2) 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .cta-sub {
-    font-size: 17px;
-    color: var(--text-2);
-    line-height: 1.65;
-    max-width: 520px;
-    margin-bottom: 28px;
-  }
-
-  .cta-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .cta-chips li {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 7px 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--text-2);
-  }
-  .cta-chips li svg { color: var(--success); flex-shrink: 0; }
-
-  /* ── Actions side ─────────────────────────────────────────────────── */
-  .cta-actions {
+  /* ── Left Side: Friendly Text ── */
+  .cta-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    min-width: 300px;
   }
 
-  /* Primary WA button — the most prominent element on the page */
-  .cta-btn-wa {
-    display: flex;
+  .greeting-pill {
+    display: inline-flex;
     align-items: center;
-    gap: 14px;
-    width: 100%;
-    padding: 18px 22px;
-    background: #25D366;
-    color: #052e15;
-    border-radius: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 20px 50px -14px rgba(37, 211, 102, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    transition: transform .15s ease, box-shadow .15s ease;
-    position: relative;
-    overflow: hidden;
+    gap: 12px;
+    padding: 6px 16px 6px 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    margin-bottom: 28px;
+    transition: transform 0.3s ease;
   }
-  .cta-btn-wa::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .cta-btn-wa:hover {
+  .greeting-pill:hover {
     transform: translateY(-2px);
-    box-shadow: 0 26px 60px -14px rgba(37, 211, 102, 0.7),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
-  .cta-btn-wa-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    background: rgba(5, 46, 21, 0.18);
-    display: grid; place-items: center;
-    flex-shrink: 0;
+  
+  .avatar-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
   }
-  .cta-btn-wa-text {
+  
+  .greeting-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    flex: 1;
   }
-  .cta-btn-wa-main {
-    font-size: 16px;
-    font-weight: 700;
+  .greeting-hi {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
     line-height: 1.2;
   }
-  .cta-btn-wa-hint {
-    font-size: 12px;
-    font-weight: 500;
-    opacity: 0.75;
+  .greeting-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
   }
-  .cta-btn-wa-arrow {
-    flex-shrink: 0;
-    opacity: 0.7;
-    transition: transform .15s;
-  }
-  .cta-btn-wa:hover .cta-btn-wa-arrow { transform: translateX(3px); }
 
-  /* Secondary email link */
-  .cta-btn-email {
-    display: inline-flex;
+  .cta-headline {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .cta-message {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-2);
+    margin: 0 0 36px;
+    max-width: 480px;
+  }
+
+  .friendly-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .f-badge {
+    display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    font-weight: 500;
-    color: var(--text-3);
-    padding: 10px 0;
-    border-bottom: 1px dashed var(--border-strong);
-    transition: color .15s, border-color .15s;
+    font-weight: 600;
+    color: var(--text-2);
+    padding: 8px 16px;
+    background: color-mix(in oklab, var(--bg) 50%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 12px;
   }
-  .cta-btn-email:hover { color: var(--text); border-color: var(--text); }
+  
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .pulse-dot.green { background: #10B981; }
+  .pulse-dot.blue { background: var(--accent); }
+  
+  .pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.4;
+    animation: dotPulse 2s ease-out infinite;
+  }
+  
+  @keyframes dotPulse {
+    0% { transform: scale(0.5); opacity: 0.6; }
+    100% { transform: scale(2); opacity: 0; }
+  }
 
-  .cta-hours {
-    font-size: 12.5px;
-    color: var(--text-3);
-    margin: 0;
-    padding-top: 4px;
+  /* ── Right Side: Action Card ── */
+  .cta-actions {
+    display: flex;
+    justify-content: flex-end;
   }
 
-  /* ── Sticky mini CTA bar ──────────────────────────────────────────── */
-  .cta-bar {
-    background: color-mix(in oklab, var(--surface) 90%, var(--accent) 10%);
-    border-top: 1px solid var(--border-strong);
-    border-bottom: 1px solid var(--border);
-    padding: 18px 0;
+  .floating-action-card {
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: 32px;
+    padding: 32px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px -15px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  .cta-bar-inner {
+  
+  .floating-action-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  [data-theme="light"] .floating-action-card {
+    box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.12);
+  }
+
+  .btn-wa-massive {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 16px;
+    background: var(--wa-green);
+    padding: 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    color: var(--wa-green-text);
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 30px -8px var(--wa-green-glow);
   }
-  .cta-bar-text {
-    font-size: 15px;
-    color: var(--text-2);
-    margin: 0;
+  
+  .btn-wa-massive:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 40px -8px var(--wa-green-glow);
+    background: #20c75e;
   }
-  .cta-bar-text strong { color: var(--text); }
-  .cta-bar-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 22px;
-    background: #25D366;
-    color: #052e15;
-    font-weight: 700;
-    font-size: 14.5px;
-    border-radius: 10px;
-    white-space: nowrap;
-    box-shadow: 0 8px 20px -8px rgba(37, 211, 102, 0.5);
-    transition: transform .12s, box-shadow .12s;
+  
+  .wa-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
     flex-shrink: 0;
   }
-  .cta-bar-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 28px -8px rgba(37, 211, 102, 0.6);
+  
+  .wa-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .wa-title {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  
+  .wa-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
   }
 
-  /* ── Responsive ───────────────────────────────────────────────────── */
-  @media (max-width: 980px) {
-    .cta-section { padding: 80px 0; }
-    .cta-inner {
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-3);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px dashed var(--border-strong);
+  }
+  .divider span {
+    padding: 0 14px;
+  }
+
+  .btn-email-soft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-email-soft:hover {
+    background: var(--surface);
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ambient-blob { animation: none; }
+    .pulse-dot::after { animation: none; opacity: 0; }
+    .floating-action-card:hover { transform: none; }
+    .btn-wa-massive:hover { transform: none; }
+    .greeting-pill:hover { transform: none; }
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .cta-card {
+      padding: 48px 32px;
+      border-radius: 32px;
+    }
+    .cta-layout {
       grid-template-columns: 1fr;
       gap: 48px;
     }
-    .cta-actions { min-width: 0; width: 100%; }
-    .cta-btn-wa { max-width: 480px; }
+    .cta-actions {
+      justify-content: center;
+    }
+    .cta-text {
+      align-items: center;
+      text-align: center;
+    }
+    .friendly-badges {
+      justify-content: center;
+    }
   }
-
-  @media (max-width: 640px) {
-    .cta-section { padding: 64px 0; }
-    .cta-headline { font-size: 36px; }
-    .cta-chips { gap: 8px; }
-    .cta-chips li { font-size: 12.5px; padding: 6px 12px; }
-    .cta-btn-wa { padding: 16px 18px; }
-    .cta-btn-wa-main { font-size: 15px; }
-    .cta-bar-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-    .cta-bar-btn { width: 100%; justify-content: center; }
+  
+  @media (max-width: 576px) {
+    .cta-section { padding: 80px 0; }
+    .cta-card { padding: 32px 20px; border-radius: 24px; }
+    .cta-headline { font-size: 28px; }
+    .cta-message { font-size: 15px; }
+    .floating-action-card { padding: 24px; border-radius: 24px; }
+    .btn-wa-massive { padding: 16px; border-radius: 20px; }
+    .wa-icon-wrapper { width: 46px; height: 46px; }
+    .wa-title { font-size: 16px; }
   }
 </style>

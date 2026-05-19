@@ -1,240 +1,267 @@
 ---
 /**
- * Templates — grid of mockups instead of single tab/switcher.
+ * Templates — Humanist & Minimalist Showcase.
  *
- * Every card renders an inline CSS-only mockup (same `.tpl-prev` styles
- * already defined globally). No images required → page stays light. When
- * real screenshots are ready, swap each `.tpl-prev` block for an <img>.
- *
- * Filter buttons drive the runtime filter logic in `landing.ts` by toggling
- * a data attribute on the grid root; pure CSS handles the show/hide.
+ * Stripped away "AI slop" (excessive glows, glassmorphism, forced premium tags).
+ * Focuses on clean typography, ample whitespace, soft colors, and a genuine,
+ * human-centered aesthetic. Very simple, beautiful, and accessible.
  */
 import { TEMPLATES } from '../data/templates';
 import { waLink } from '../lib/wa';
-
-// Audience taxonomy — derived from each template's `fit` field, but flattened
-// for easy filtering. Keep keys lowercase, ASCII-only.
-type Audience = 'all' | 'sd' | 'smp' | 'sma' | 'smk' | 'islam';
-
-const FILTERS: Array<{ key: Audience; label: string }> = [
-  { key: 'all', label: 'Semua' },
-  { key: 'sd', label: 'SD' },
-  { key: 'smp', label: 'SMP' },
-  { key: 'sma', label: 'SMA' },
-  { key: 'smk', label: 'SMK' },
-  { key: 'islam', label: 'Sekolah Islam' },
-];
-
-// Tag each template with the audience filters it belongs to.
-// (Stored here, not in data/templates.ts, so taxonomy stays presentation-only.)
-const TAGS: Record<string, Audience[]> = {
-  navy: ['smk', 'sma', 'smp'],
-  green: ['sd', 'smp'],
-  purple: ['islam', 'sma'],
-  red: ['sma', 'smp'],
-  dark: ['smk'],
-};
 ---
 
 <section id="demo">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">⊞ Galeri Template</span>
-      <h2>Pilih Tampilan Favorit Sekolah Anda</h2>
-      <p>Lima template siap pakai dengan karakter berbeda. Semua bisa dikustomisasi warna, logo, dan font sesuai identitas sekolah.</p>
+      <h2>Tampilan Premium, Siap Pakai</h2>
+      <p>Tidak perlu pusing memikirkan <i>layout</i>. Pilih satu dari lima desain eksklusif di bawah ini, dan kami akan menyesuaikannya dengan logo serta warna kebanggaan sekolah Anda.</p>
     </div>
 
-    <div class="tpl-filters reveal" role="tablist" aria-label="Filter template">
-      {FILTERS.map((f, i) => (
-        <button
-          class={`tpl-filter${i === 0 ? ' active' : ''}`}
-          data-filter={f.key}
-          role="tab"
-          aria-selected={i === 0}
-          type="button"
-        >
-          {f.label}
-        </button>
-      ))}
-    </div>
-
-    <div class="tpl-grid" id="tplGrid" data-active-filter="all">
+    <div class="tpl-grid">
       {TEMPLATES.map((t) => (
-        <article
-          class="tpl-card reveal"
-          data-tags={(TAGS[t.key] ?? []).join(',')}
-          data-tpl={t.key}
-        >
-          <div class={`tpl-card-frame ${t.cls}`}>
-            <div class="browser-bar">
-              <div class="browser-dots"><span></span><span></span><span></span></div>
-              <div class="browser-url">{t.url}</div>
+        <article class="tpl-card reveal">
+          
+          <!-- Clean, flat visual frame -->
+          <div class={`tpl-frame ${t.cls}`}>
+            <div class="simple-browser">
+              <div class="dots"><span></span><span></span><span></span></div>
             </div>
-            <div class="tpl-prev tpl-prev--card">
-              <div class="nav-row">
-                <div class="lg"><span class="lg-mark"></span> {t.logoName}</div>
-                <div class="links">Beranda · Berita · Profil</div>
+            
+            <div class="tpl-mockup">
+              <div class="m-nav">
+                <div class="m-logo"></div>
+                <div class="m-links"><span></span><span></span><span></span></div>
               </div>
-              <div class="hero-card">
-                <h4>{t.heroTitle}</h4>
-                <div class="sub">{t.heroSub}</div>
-                <button class="cta" type="button" tabindex="-1">Daftar PPDB →</button>
+              <div class="m-hero">
+                <div class="m-title">{t.heroTitle}</div>
+                <div class="m-sub">{t.heroSub}</div>
+                <div class="m-btn"></div>
               </div>
-              <div class="grid3">
-                <div class="c"><span>Siswa</span><span class="num">1.2k</span></div>
-                <div class="c"><span>Guru</span><span class="num">82</span></div>
-                <div class="c"><span>Jurusan</span><span class="num">7</span></div>
+              <div class="m-stats">
+                <div class="st"></div><div class="st"></div><div class="st"></div>
               </div>
             </div>
           </div>
 
-          <div class="tpl-card-body">
-            <div class="tpl-card-head">
+          <!-- Humanist typography and info -->
+          <div class="tpl-info">
+            <div class="info-header">
               <h3>{t.name}</h3>
-              <span class={`tpl-badge ${t.badge.cls}`}>{t.badge.label}</span>
+              <span class="label">{t.fit}</span>
             </div>
-            <p class="tpl-card-mood">{t.mood}</p>
-            <p class="tpl-card-fit"><span>Cocok untuk:</span> {t.fit}</p>
-            <div class="tpl-card-cta">
-              <a class="btn btn-ghost btn-sm" href={waLink(`Halo, saya tertarik dengan template "${t.name}". Bisa info lebih lanjut?`)} target="_blank" rel="noopener">
-                Pakai Template Ini
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
+            <p class="desc">{t.desc}</p>
+            <a class="action-link" href={waLink(`Halo, saya tertarik melihat demo langsung dari desain ${t.name}.`)} target="_blank" rel="noopener">
+              Lihat Demo Lengkap
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
+
         </article>
       ))}
     </div>
-
-    <p class="tpl-note reveal">🎨 Warna, font, dan logo sekolah Anda bisa disesuaikan pada semua template — tanpa biaya tambahan.</p>
   </div>
 </section>
 
 <style>
-  .tpl-filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 36px;
+  .section-head {
+    max-width: 600px;
+    margin-bottom: 60px;
   }
-  .tpl-filter {
-    padding: 9px 18px;
-    border-radius: 999px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    font-size: 13.5px;
-    font-weight: 600;
+  
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  
+  .section-head p {
+    font-size: 18px;
     color: var(--text-2);
-    transition: all .15s;
-    cursor: pointer;
-  }
-  .tpl-filter:hover { color: var(--text); border-color: var(--border-strong); }
-  .tpl-filter.active {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
+    line-height: 1.6;
   }
 
+  /* Grid: Simple 2 columns for a spacious, editorial feel */
   .tpl-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-
-  /* Hidden state controlled by the runtime filter — toggling is done by JS
-     setting `data-active-filter` on the grid; CSS reads each card's tags. */
-  .tpl-grid[data-active-filter="sd"]     .tpl-card:not([data-tags*="sd"]),
-  .tpl-grid[data-active-filter="smp"]    .tpl-card:not([data-tags*="smp"]),
-  .tpl-grid[data-active-filter="sma"]    .tpl-card:not([data-tags*="sma"]),
-  .tpl-grid[data-active-filter="smk"]    .tpl-card:not([data-tags*="smk"]),
-  .tpl-grid[data-active-filter="islam"]  .tpl-card:not([data-tags*="islam"]) {
-    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
 
   .tpl-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: border-color .2s, transform .2s, box-shadow .2s;
-  }
-  .tpl-card:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-3px);
-    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.5);
+    gap: 24px;
+    group: relative;
   }
 
-  .tpl-card-frame {
-    position: relative;
-    aspect-ratio: 16 / 11;
+  /* Flat, clean visual frame without heavy dropshadows */
+  .tpl-frame {
+    background: var(--surface-2);
+    border-radius: 16px;
     overflow: hidden;
+    padding: 0;
+    position: relative;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+  }
+  
+  .tpl-card:hover .tpl-frame {
+    transform: translateY(-4px);
+  }
+
+  /* Minimalist browser bar */
+  .simple-browser {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.02);
     border-bottom: 1px solid var(--border);
   }
-  .tpl-card-frame .browser-bar { padding: 8px 10px; }
-  .tpl-card-frame .browser-dots span { width: 8px; height: 8px; }
-  .tpl-card-frame .browser-url { font-size: 9.5px; padding: 3px 8px; }
-
-  /* Compact tpl-prev for card density. Same theming hooks as the original
-     stage; only sizing tightens. */
-  .tpl-prev--card { padding: 12px; min-height: 0; gap: 8px; height: calc(100% - 32px); }
-  .tpl-prev--card .hero-card { padding: 18px 14px; min-height: 110px; }
-  .tpl-prev--card .hero-card h4 { font-size: 14px; }
-  .tpl-prev--card .hero-card .sub { font-size: 8px; max-width: 140px; }
-  .tpl-prev--card .hero-card .cta { padding: 4px 9px; font-size: 8px; }
-  .tpl-prev--card .grid3 .c { padding: 8px; min-height: 50px; }
-  .tpl-prev--card .grid3 .c .num { font-size: 14px; }
-
-  .tpl-card-body {
-    padding: 22px;
+  [data-theme="dark"] .simple-browser { background: rgba(255,255,255,0.02); }
+  
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); }
+  
+  /* Abstract, clean UI Mockup */
+  .tpl-mockup {
+    padding: 32px;
+    aspect-ratio: 16/10;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 24px;
+    background: var(--bg);
   }
-  .tpl-card-head {
+
+  /* We apply template specific tint via CSS custom properties */
+  .tpl-navy .tpl-mockup { --tpl-color: #1E40AF; --tpl-bg: #EFF6FF; }
+  .tpl-green .tpl-mockup { --tpl-color: #059669; --tpl-bg: #ECFDF5; }
+  .tpl-purple .tpl-mockup { --tpl-color: #7C3AED; --tpl-bg: #F5F3FF; }
+  .tpl-red .tpl-mockup { --tpl-color: #DC2626; --tpl-bg: #FEF2F2; }
+  .tpl-dark .tpl-mockup { --tpl-color: #71717A; --tpl-bg: #18181B; }
+
+  [data-theme="dark"] .tpl-navy .tpl-mockup { --tpl-bg: #1e1e24; }
+  [data-theme="dark"] .tpl-green .tpl-mockup { --tpl-bg: #18221f; }
+  [data-theme="dark"] .tpl-purple .tpl-mockup { --tpl-bg: #1f1b24; }
+  [data-theme="dark"] .tpl-red .tpl-mockup { --tpl-bg: #241a1a; }
+  
+  .m-nav {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .m-logo { width: 24px; height: 24px; border-radius: 6px; background: var(--tpl-color); }
+  .m-links { display: flex; gap: 12px; }
+  .m-links span { width: 32px; height: 4px; border-radius: 2px; background: var(--border-strong); }
+
+  .m-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    background: var(--tpl-bg);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .m-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+  }
+  .m-sub {
+    font-size: 10px;
+    color: var(--text-2);
+    max-width: 80%;
+    line-height: 1.5;
+  }
+  .m-btn {
+    margin-top: 8px;
+    width: 60px; height: 20px;
+    border-radius: 4px;
+    background: var(--tpl-color);
+  }
+
+  .m-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .st {
+    height: 32px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+
+  /* Typography / Info */
+  .tpl-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .info-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
   }
-  .tpl-card-head h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+
+  .info-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
     margin: 0;
   }
-  .tpl-card-mood {
-    font-size: 13px;
-    color: var(--text-3);
-    font-weight: 500;
-  }
-  .tpl-card-fit {
-    font-size: 13px;
-    color: var(--text-2);
-    margin-top: 4px;
-  }
-  .tpl-card-fit span {
-    color: var(--text-3);
-    font-weight: 500;
-  }
-  .tpl-card-cta {
-    margin-top: 10px;
-  }
-  .btn-sm {
-    padding: 9px 16px;
-    font-size: 13.5px;
-    border-radius: 9px;
-  }
-  .tpl-card-cta .btn { width: 100%; justify-content: center; }
 
-  @media (max-width: 980px) {
-    .tpl-grid { grid-template-columns: repeat(2, 1fr); }
+  .label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-3);
   }
+
+  .desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  .action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    margin-top: 8px;
+    width: max-content;
+    transition: opacity 0.2s;
+  }
+  .action-link:hover {
+    opacity: 0.6;
+  }
+  .action-link svg {
+    transition: transform 0.2s;
+  }
+  .action-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 992px) {
+    .tpl-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+  
   @media (max-width: 640px) {
-    .tpl-grid { grid-template-columns: 1fr; }
+    .minimal-templates { padding: 80px 0; }
+    .tpl-mockup { padding: 16px; gap: 16px; }
+    .m-hero { padding: 16px; }
   }
 </style>
