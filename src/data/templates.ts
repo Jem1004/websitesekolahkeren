@@ -35,4 +35,14 @@ export const DEMOS: Demo[] = [
     imageAlt: 'Pratinjau Demo 2 — tampilan website sekolah alternatif dari websekolahkeren',
     demoUrl: 'https://demo2.websekolahkeren.id',
   },
+  {
+    key: 'demo3',
+    name: 'Demo 3',
+    desc:
+      'Desain kreatif, ceria, dan penuh warna dengan nuansa bersahabat (playful). Sangat tepat untuk menonjolkan aktivitas interaktif, kenyamanan belajar, dan membangun kedekatan emosional dengan calon siswa dan orang tua.',
+    fit: 'SD · TK · PAUD',
+    image: '/demo3.png',
+    imageAlt: 'Pratinjau Demo 3 — tampilan website sekolah kreatif dan playful untuk SD, TK, dan PAUD dari websekolahkeren',
+    demoUrl: 'https://demo3.websekolahkeren.id',
+  },
 ];
