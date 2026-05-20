@@ -23,7 +23,7 @@ export const DEMOS: Demo[] = [
     fit: 'SD · SMP · SMA · SMK',
     image: '/demo1.png',
     imageAlt: 'Pratinjau Demo 1 — tampilan website sekolah modern dari websekolahkeren',
-    demoUrl: 'https://demo1.websekolahkeren.id',
+    demoUrl: 'https://smkmutuppu.sch.id',
   },
   {
     key: 'demo2',
