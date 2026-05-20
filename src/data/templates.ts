@@ -45,4 +45,14 @@ export const DEMOS: Demo[] = [
     imageAlt: 'Pratinjau Demo 3 — tampilan website sekolah kreatif dan playful untuk SD, TK, dan PAUD dari websekolahkeren',
     demoUrl: 'https://demo3.websekolahkeren.id',
   },
+  {
+    key: 'demo4',
+    name: 'Demo 4',
+    desc:
+      'Desain mewah, eksklusif, dan profesional dengan dominasi warna hijau botol dan aksen emas. Menampilkan prakata pimpinan yang berwibawa serta integrasi informasi pengumuman dan agenda yang dinamis.',
+    fit: 'SD · SMP · SMA · SMK · Sekolah Model',
+    image: '/demo4.png',
+    imageAlt: 'Pratinjau Demo 4 — tampilan website sekolah premium dengan nuansa hijau tua dan emas dari websekolahkeren',
+    demoUrl: 'https://demo4.websekolahkeren.id',
+  },
 ];
