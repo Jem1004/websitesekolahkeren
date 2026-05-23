@@ -25,3 +25,4 @@ pnpm-debug.log*
 .tmp_assets/
 .tmp_template.html
 .tmp_decode.mjs
+.vercel
