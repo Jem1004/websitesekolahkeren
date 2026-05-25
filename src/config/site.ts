@@ -11,7 +11,7 @@ export const SITE = {
   // Primary brand pitch — kept under 60 chars where possible for SERP.
   title: 'websekolahkeren — Website Sekolah Modern, CMS Mudah, Harga All-In',
   description:
-    'Website sekolah modern dengan CMS mudah dikelola sendiri. Domain .sch.id dan hosting sudah termasuk. Fitur bisa disesuaikan request sekolah. Mulai Rp 1,1 juta.',
+    'Website sekolah modern dengan CMS mudah dikelola sendiri. Domain .sch.id dan hosting sudah termasuk. Fitur bisa disesuaikan request sekolah. Mulai Rp 1 Juta.',
   keywords: [
     // Brand variants — penulisan nama yang umum dipakai user saat mencari
     'websekolahkeren',
@@ -78,7 +78,7 @@ export const SITE = {
     foundingYear: 2024,
     serviceArea: 'Indonesia',
     currency: 'IDR',
-    priceRange: 'Rp 1.100.000 - Rp 1.500.000',
+    priceRange: 'Rp 1.000.000 - Rp 1.300.000',
   },
   // OG image is shipped as SVG (renders crisp on every viewport). For broader
   // social platform support (older Facebook/LinkedIn), generate a 1200x630 PNG

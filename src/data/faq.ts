@@ -24,9 +24,9 @@ export const FAQS: Faq[] = [
       'Maksimal 3 hari kerja setelah konten dan data dari sekolah diterima lengkap. Hari pertama konsultasi dan pilih template, hari kedua pengumpulan konten, hari ketiga website sudah live.',
   },
   {
-    q: 'Apakah harga Rp 1,1 juta itu per tahun? Apa saja yang sudah termasuk?',
+    q: 'Berapa biaya pembuatan website sekolah dan bagaimana sistem perpanjangannya?',
     answerHTML:
-      'Ya, Rp 1.100.000 per tahun dan sudah <strong>all-in</strong> — termasuk domain .sch.id dan hosting cloud. Tidak ada biaya tambahan saat perpanjangan. Harga perpanjangan sama dengan harga pertama.',
+      'Biaya pembuatan di tahun pertama adalah <strong>Rp 1.000.000</strong> untuk Paket Standar dan <strong>Rp 1.300.000</strong> untuk Paket Pro (sudah <strong>all-in</strong> termasuk domain .sch.id dan hosting cloud). Untuk tahun berikutnya, perpanjangan sangat terjangkau yaitu hanya <strong>Rp 800.000 per tahun</strong> untuk semua paket.',
   },
   {
     q: 'Bagaimana kalau website bermasalah atau ada yang perlu diperbaiki?',
