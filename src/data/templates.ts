@@ -55,4 +55,14 @@ export const DEMOS: Demo[] = [
     imageAlt: 'Pratinjau Demo 4 — tampilan website sekolah premium dengan nuansa hijau tua dan emas dari websekolahkeren',
     demoUrl: 'https://demo4.websekolahkeren.id',
   },
+  {
+    key: 'demo5',
+    name: 'Demo 5',
+    desc:
+      'Desain modern yang trendi dengan tata letak minimalis, berjiwa muda, dan berkinerja tinggi. Sangat tepat untuk memamerkan galeri karya, jurusan keahlian, prestasi kompetensi, serta memfasilitasi publikasi kegiatan akademik yang interaktif.',
+    fit: 'SMK · SMA · Lembaga Kursus · Kampus Kreatif',
+    image: '/demo5.png',
+    imageAlt: 'Pratinjau Demo 5 — tampilan website sekolah modern minimalis dan berkinerja tinggi dari websekolahkeren',
+    demoUrl: 'https://demo5.websekolahkeren.id',
+  },
 ];

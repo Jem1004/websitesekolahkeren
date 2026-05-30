@@ -1,0 +1,2873 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config/site';
+
+// High-fidelity SEO metadata
+const title = 'Video Animasi Promosi Web - websekolahkeren';
+const description = 'Tonton video animasi interaktif yang mempromosikan websekolahkeren. Jelajahi fitur premium, CMS mudah, dan harga all-in dengan musik latar interaktif.';
+---
+
+<Layout {title} {description}>
+  <Navbar />
+
+  <main class="promo-page-container">
+    <!-- Custom Glow Orbs for ambient tech vibes, styled to match websekolahkeren colors -->
+    <div class="promo-bg-glow" id="pageBgGlow">
+      <div class="glow-orb orange-glow"></div>
+      <div class="glow-orb blue-glow"></div>
+    </div>
+
+    <div class="container container-content">
+      
+      <!-- Top Header (Hidden in Record Mode) -->
+      <div class="promo-header text-center reveal-in">
+        <span class="promo-badge">PROMOTION HUB</span>
+        <h1>Video Animasi Promosi Premium</h1>
+        <p class="lead-text">
+          Pilih salah satu dari konsep video promosi websekolahkeren di bawah, sesuaikan format layar, lalu gunakan <strong>Mode Rekam</strong> untuk melakukan perekaman layar bersih yang luwes untuk media sosial Anda!
+        </p>
+      </div>
+
+      <!-- CONCEPT SELECTOR TABS (Hidden in Record Mode) -->
+      <div class="concept-selector-tabs reveal-in" id="conceptTabsContainer">
+        <button class="concept-tab-btn active" data-concept="1" id="tabConcept1">
+          <div class="icon-tab">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="m10 7 6 5-6 5V7z"></path>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+            </svg>
+          </div>
+          <div class="tab-meta">
+            <span class="tab-title">Konsep 1: Fitur Utama (Tema Gelap)</span>
+            <span class="tab-desc">Animasi roket, keunggulan mockup responsif, & paket hemat. (40 Detik)</span>
+          </div>
+        </button>
+
+        <button class="concept-tab-btn" data-concept="2" id="tabConcept2">
+          <div class="icon-tab">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path>
+            </svg>
+          </div>
+          <div class="tab-meta">
+            <span class="tab-title">Konsep 2: Solusi WhatsApp (Tema Cerah)</span>
+            <span class="tab-desc">Hook gelembung chat WA & Story cepat hilang. Solusi website abadi. (25 Detik)</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Main Video Showcase Arena -->
+      <div class="video-arena">
+        
+        <!-- Video Box Wrapper (The target of formatting & recording) -->
+        <div class="video-frame-wrapper shadow-epic ratio-16-9" id="videoWrapper">
+          
+          <!-- Inner Video Box where the animation happens -->
+          <div class="video-content-box" id="videoBox" data-active-concept="1" data-active-scene="1">
+            
+            <!-- Record Mode Escape Badge (Only visible in Record Mode) -->
+            <div class="record-badge" id="recordEscapeBadge">
+              <span class="red-record-dot"></span>
+              <span>Perekaman Aktif. Tekan <strong>ESC</strong> untuk Keluar</span>
+            </div>
+
+            <!-- Interactive Sparkle Particles Container -->
+            <div class="particles-container" id="particlesContainer"></div>
+
+            <!-- ========================================== -->
+            <!-- CONCEPT 1 WRAPPER: FITUR UTAMA (DARK THEME) -->
+            <!-- ========================================== -->
+            <div class="concept-wrapper" id="concept1Wrapper">
+              
+              <!-- SCENE 1.1: THE PROBLEM (0s - 8s) -->
+              <div class="scene scene-1" id="c1-scene1">
+                <div class="sad-face-icon">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 14s1.5-2 4-2 4 2 4 2M9 9h.01M15 9h.01"></path>
+                  </svg>
+                </div>
+                <div class="scene-title">Website Sekolah Lama Anda Bermasalah?</div>
+                <div class="problem-cloud">
+                  <span class="problem-tag tag-1">Tampilan Jadul</span>
+                  <span class="problem-tag tag-2">Sangat Lambat</span>
+                  <span class="problem-tag tag-3">Sulit Dikelola</span>
+                  <span class="problem-tag tag-4">Harga Mahal</span>
+                  <span class="problem-tag tag-5">Server Eror</span>
+                </div>
+                
+                <!-- Simulated slow loading browser -->
+                <div class="simulated-browser">
+                  <div class="sb-header">
+                    <div class="sb-dot"></div><div class="sb-dot"></div><div class="sb-dot"></div>
+                    <div class="sb-url">sekolahkita-lama.sch.id</div>
+                  </div>
+                  <div class="sb-body">
+                    <div class="spinner-loading"></div>
+                    <div class="error-msg">Error 504: Gateway Timeout</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCENE 1.2: THE LAUNCH (8s - 14s) -->
+              <div class="scene scene-2" id="c1-scene2">
+                <div class="stars-sky"></div>
+                
+                <!-- Rocket Flying Group -->
+                <div class="space-rocket-group" id="rocketGroup">
+                  <svg width="180" height="180" viewBox="0 0 400 400" role="img" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="planetGrad" cx="35%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#2a1208"/>
+                        <stop offset="45%" stop-color="#140600"/>
+                        <stop offset="100%" stop-color="#050200"/>
+                      </radialGradient>
+                      <radialGradient id="glowRing" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#F97316" stop-opacity="0.25"/>
+                        <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+                      </radialGradient>
+                      <radialGradient id="rocketBodyGrad" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#e2e8f0"/>
+                      </radialGradient>
+                    </defs>
+                    
+                    <circle cx="200" cy="200" r="140" fill="url(#glowRing)"/>
+                    <ellipse cx="200" cy="200" rx="158" ry="46" fill="none" stroke="#ea580c" stroke-width="5" stroke-dasharray="248 248" opacity="0.45"/>
+                    <circle cx="200" cy="200" r="100" fill="url(#planetGrad)"/>
+                    <ellipse cx="200" cy="200" rx="158" ry="46" fill="none" stroke="#F97316" stroke-width="5" stroke-dasharray="248 248" stroke-dashoffset="248"/>
+                    
+                    <g class="inner-rocket" transform="translate(248, 92) rotate(45)">
+                      <ellipse class="engine-flame" cx="0" cy="58" rx="8" ry="14" fill="#F97316"/>
+                      <ellipse class="engine-flame-inner" cx="0" cy="62" rx="4" ry="8" fill="#ffffff"/>
+                      <rect x="-13" y="-10" width="26" height="58" rx="6" fill="url(#rocketBodyGrad)"/>
+                      <path d="M-13,-10 Q0,-44 13,-10 Z" fill="#ffffff"/>
+                      <circle cx="0" cy="12" r="7" fill="#F97316"/>
+                      <circle cx="0" cy="12" r="4.5" fill="#0f172a"/>
+                      <circle cx="-1.5" cy="10" r="1.5" fill="#ffffff" opacity="0.7"/>
+                      <path d="M-13,32 L-24,52 L-13,44 Z" fill="#ea580c"/>
+                      <path d="M13,32 L24,52 L13,44 Z" fill="#ea580c"/>
+                      <rect x="-13" y="22" width="26" height="5" fill="#F97316" opacity="0.7"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="solution-glow-text">
+                  <div class="small-tag">MEMPERKENALKAN</div>
+                  <div class="big-brand">web<span>sekolahkeren</span></div>
+                </div>
+              </div>
+
+              <!-- SCENE 1.3: PREMIUM RESPONSIVE FEATURES (14s - 24s) -->
+              <div class="scene scene-3" id="c1-scene3">
+                <div class="features-title">Sempurna di Laptop, Tablet, & HP</div>
+                
+                <div class="device-mockups-container">
+                  <div class="device-laptop">
+                    <div class="dl-screen">
+                      <div class="dl-topbar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="url">demo4.websekolahkeren.id</span>
+                      </div>
+                      <img src="/demo4.png" alt="Laptop Preview" class="dl-img" />
+                    </div>
+                    <div class="dl-base"></div>
+                  </div>
+                  <div class="device-tablet">
+                    <div class="dt-screen">
+                      <img src="/demo1.png" alt="Tablet Preview" class="dt-img" />
+                    </div>
+                  </div>
+                  <div class="device-phone">
+                    <div class="dp-notch"></div>
+                    <div class="dp-screen">
+                      <img src="/demo2-mobile.png" alt="Phone Preview" class="dp-img" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="feature-bullets">
+                  <div class="bullet-item"><span class="check-ico">✓</span> Desain Premium & Elegan</div>
+                  <div class="bullet-item"><span class="check-ico">✓</span> CMS Mudah Dikelola Staf</div>
+                  <div class="bullet-item"><span class="check-ico">✓</span> Server Super Cepat & Stabil</div>
+                </div>
+              </div>
+
+              <!-- SCENE 1.4: TIMELINE & PRICING (24s - 32s) -->
+              <div class="scene scene-4" id="c1-scene4">
+                <div class="scene-title">Website Jadi Hanya Dalam 3 Hari Kerja!</div>
+                
+                <div class="animation-steps">
+                  <div class="anim-step step-1">
+                    <div class="step-badge">1</div>
+                    <div class="step-txt">Pilih Desain</div>
+                  </div>
+                  <div class="anim-step step-2">
+                    <div class="step-badge">2</div>
+                    <div class="step-txt">Kirim Konten</div>
+                  </div>
+                  <div class="anim-step step-3">
+                    <div class="step-badge">3</div>
+                    <div class="step-txt">Review Kilat</div>
+                  </div>
+                  <div class="anim-step step-4">
+                    <div class="step-badge">4</div>
+                    <div class="step-txt">Website Live!</div>
+                  </div>
+                </div>
+
+                <div class="price-showcase-card">
+                  <div class="card-glow"></div>
+                  <div class="p-eyebrow">PAKET ALL-IN TERIMA BERES</div>
+                  <div class="p-cost">Rp 1,1 Juta<span> / Tahun</span></div>
+                  <div class="p-features-mini">
+                    <span>✦ Gratis Domain .sch.id</span>
+                    <span>✦ Gratis Hosting & SSL Aman</span>
+                    <span>✦ Bantuan Pelatihan CMS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCENE 1.5: CALL TO ACTION (32s - 40s) -->
+              <div class="scene scene-5" id="c1-scene5">
+                <div class="stars-sky"></div>
+                <div class="cta-logo">
+                  <img src="/logo.svg" alt="websekolahkeren logo" class="cta-logo-img" />
+                  <span>web<strong>sekolahkeren</strong></span>
+                </div>
+                <div class="cta-title">Siap Memiliki Website Sekolah Modern?</div>
+                <p class="cta-desc">Hubungi tim kami hari ini dan lihat website sekolah Anda online maksimal 3 hari kerja.</p>
+                <a href={SITE.contact.waUrl} target="_blank" class="wa-pulsate-btn shadow-epic">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
+                  </svg>
+                  <span>Hubungi via WhatsApp (Terima Beres)</span>
+                </a>
+                <div class="wa-phone-number">Nomor Resmi: <strong>0877-8445-1080</strong></div>
+              </div>
+
+            </div>
+
+            <!-- ============================================ -->
+            <!-- CONCEPT 2 WRAPPER: SOLUSI PUBLIKASI WA (LIGHT) -->
+            <!-- ============================================ -->
+            <div class="concept-wrapper hide" id="concept2Wrapper">
+              
+              <!-- SCENE 2.1: THE WA OVERLOAD HOOK (0s - 7s) -->
+              <div class="scene scene-1" id="c2-scene1">
+                <div class="wa-chat-visualizer">
+                  <div class="phone-frame-flat">
+                    <div class="pf-header">
+                      <span class="pf-title">WhatsApp Sekolah</span>
+                      <span class="pf-status">online</span>
+                    </div>
+                    <div class="pf-body" id="whatsappChatsContainer">
+                      <div class="chat-bubble left c2-tag-1">
+                        <span class="chat-sender">Wakasek Humas</span>
+                        <p>Bapak/Ibu, ini brosur pendaftaran PPDB Baru sekolah kita ya mohon dibagikan...</p>
+                      </div>
+                      <div class="chat-bubble left c2-tag-2">
+                        <span class="chat-sender">Pembina OSIS</span>
+                        <p>Dokumentasi foto lomba Matematika kemarin yang kita juara 1, silakan di-share di story!</p>
+                      </div>
+                      <div class="chat-bubble left c2-tag-3">
+                        <span class="chat-sender">Operator Sekolah</span>
+                        <p>Pengumuman kelulusan dan kalender akademik terbaru mohon disebarkan...</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- EXPIRING STORY CLOCK -->
+                  <div class="story-expiry-visual" id="storyExpiryBox">
+                    <div class="expiry-circle-ring">
+                      <div class="expiry-pie"></div>
+                      <span class="expiry-time">24 Jam</span>
+                    </div>
+                    <div class="expiry-label">Story WA Hilang!</div>
+                  </div>
+                </div>
+                
+                <div class="c2-bubble-warning-badge shadow-epic">Story Terhapus & Tenggelam Pesan Lain! ✕</div>
+              </div>
+
+              <!-- SCENE 2.2: THE SOLUTION REVEAL (7s - 13s) -->
+              <div class="scene scene-2" id="c2-scene2">
+                <div class="shining-portal-wrapper">
+                  <div class="glow-portal"></div>
+                  <!-- Floating rocket logo matching websekolahkeren orange brand icon -->
+                  <div class="floating-logo-container float-soft">
+                    <img src="/logo.svg" alt="websekolahkeren" class="flying-logo-icon" />
+                  </div>
+                </div>
+                <div class="c2-solution-card">
+                  <div class="c2-card-sub">JANGAN BIARKAN INFO SEKOLAH HILANG!</div>
+                  <h2 class="c2-card-main">Website Sekolah Sendiri</h2>
+                  <p class="c2-card-desc">Adalah Solusi Paling Relevan & Abadi</p>
+                </div>
+              </div>
+
+              <!-- SCENE 2.3: ALWAYS ONLINE BENEFITS (13s - 19s) -->
+              <div class="scene scene-3" id="c2-scene3">
+                <div class="c2-bright-title">Semua Info Tersusun Rapi & Selalu Online</div>
+                
+                <div class="c2-features-grid">
+                  <div class="c2-feat-card card-cyan shadow-soft">
+                    <div class="c2-icon-wrap">📋</div>
+                    <h3>PPDB Online</h3>
+                    <p>Pendaftaran siswa baru tersistem rapi & aman.</p>
+                  </div>
+                  <div class="c2-feat-card card-emerald shadow-soft">
+                    <div class="c2-icon-wrap">🏆</div>
+                    <h3>Galeri Prestasi</h3>
+                    <p>Dokumentasi piala dan prestasi siswa abadi.</p>
+                  </div>
+                  <div class="c2-feat-card card-amber shadow-soft">
+                    <div class="c2-icon-wrap">📰</div>
+                    <h3>Berita Kegiatan</h3>
+                    <p>Publikasi acara & info penting langsung dibaca.</p>
+                  </div>
+                </div>
+
+                <div class="c2-trust-row">
+                  <span>✦ Mudah Diakses Orang Tua</span>
+                  <span>✦ Meningkatkan Reputasi</span>
+                  <span>✦ Terpercaya</span>
+                </div>
+              </div>
+
+              <!-- SCENE 2.4: PENAWARAN & CTA (19s - 25s) -->
+              <div class="scene scene-4" id="c2-scene4">
+                <div class="c2-final-logo-row">
+                  <img src="/logo.svg" alt="websekolahkeren" class="logo-mini-c2" />
+                  <span>web<strong>sekolahkeren</strong></span>
+                </div>
+                <h2 class="c2-final-title">Tingkatkan Kredibilitas Sekolah Anda!</h2>
+                
+                <div class="c2-price-tag shadow-soft">
+                  <span class="badge-tag">PROMO TERIMA BERES</span>
+                  <div class="cost">Rp 1,1 Juta<span> / Tahun (All-In)</span></div>
+                  <p class="meta">Desain Premium ✦ Domain .sch.id ✦ Hosting ✦ Selesai 3 Hari</p>
+                </div>
+
+                <a href={SITE.contact.waUrl} target="_blank" class="c2-wa-btn shadow-epic">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02A9.83 9.83 0 0 0 12.04 2zm5.79 14.18c-.25.69-1.44 1.34-2.01 1.4-.51.06-1.18.09-1.9-.12-.44-.13-1.01-.32-1.74-.63-3.06-1.32-5.06-4.4-5.21-4.61-.15-.2-1.24-1.65-1.24-3.14 0-1.5.79-2.24 1.07-2.55.28-.31.61-.39.81-.39h.59c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.27.07.15.13.34.02.54-.1.2-.16.32-.31.5-.15.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.31.79 1.31 1.7 2.12 1.17 1.05 2.16 1.37 2.46 1.52.31.15.49.13.67-.07.18-.2.78-.91.99-1.22.2-.31.41-.26.69-.16.28.1 1.78.84 2.08.99.31.15.51.23.59.36.07.13.07.74-.18 1.43z"></path>
+                  </svg>
+                  <span>Hubungi via WhatsApp (Terima Beres)</span>
+                </a>
+                <div class="c2-phone-num">Nomor Layanan: <strong>0877-8445-1080</strong></div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Video Playing Watermark (Only visible when playing/paused, hides in record mode) -->
+          <div class="video-watermark" id="playerWatermark">
+            <span class="w-brand">websekolahkeren</span>
+            <span class="w-scene-num" id="watermarkSceneNum">Scene 1 / 5</span>
+          </div>
+
+          <!-- Large Play Overlay (Fades out when played) -->
+          <div class="play-overlay" id="playOverlay">
+            <div class="play-trigger-btn shadow-epic">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+            <span>Klik untuk Mulai Video Animasi & Musik</span>
+          </div>
+
+        </div>
+
+        <!-- Pemutar Controls (Glassmorphic Bar below video) - Hidden in Record Mode -->
+        <div class="player-controls-panel shadow-epic reveal-in" id="controlsPanel">
+          
+          <!-- Top row: Timeline progress -->
+          <div class="timeline-row">
+            <span class="time-lbl" id="timeCurrent">00:00</span>
+            <div class="progress-bar-track" id="progressTrack">
+              <div class="ticks-wrapper" id="ticksContainer">
+                <!-- Ticks rendered dynamically in JS based on active concept -->
+              </div>
+              <div class="progress-bar-fill" id="progressBarFill"></div>
+              <div class="progress-handle" id="progressHandle"></div>
+            </div>
+            <span class="time-lbl" id="timeDuration">00:40</span>
+          </div>
+
+          <!-- Bottom row: Buttons -->
+          <div class="controls-action-row">
+            <div class="control-group left">
+              <!-- Play / Pause -->
+              <button class="ctrl-btn" id="btnPlayPause" aria-label="Play or Pause">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon-play">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon-pause hide">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                </svg>
+              </button>
+
+              <!-- Restart -->
+              <button class="ctrl-btn" id="btnRestart" aria-label="Restart Animation" title="Restart">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                </svg>
+              </button>
+
+              <!-- Sound Toggle -->
+              <button class="ctrl-btn" id="btnSound" aria-label="Toggle Sound" title="Sound On/Off">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-sound-off">
+                  <path d="M11 5 6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"></path>
+                </svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-sound-on hide">
+                  <path d="M11 5 6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Scene direct selector buttons -->
+            <div class="control-group center hide-tablet" id="sceneSelectorsContainer">
+              <!-- Direct selectors rendered in JS -->
+            </div>
+
+            <div class="control-group right">
+              <!-- Format layout change (Landscape / Portrait) -->
+              <button class="ctrl-btn-action" id="btnToggleFormat" title="Ubah Rasio Layar Video">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2" class="ratio-horizontal-svg"></rect>
+                  <rect x="5" y="2" width="14" height="20" rx="2" class="ratio-vertical-svg hide"></rect>
+                </svg>
+                <span id="formatText">Format Vertikal (9:16)</span>
+              </button>
+
+              <!-- Record mode (Red Pulsing dot) -->
+              <button class="ctrl-btn-record" id="btnRecordMode" title="Nyalakan Layar Bersih untuk Merekam">
+                <span class="record-red-dot"></span>
+                <span>Mode Rekam</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Instructions & Details Card (Hidden in Record Mode) -->
+      <div class="instructions-panel reveal-in" id="instructionsPanel">
+        <h3>💡 Cara Paling Cepat Merekam Halaman Ini Jadi Video MP4:</h3>
+        <ol>
+          <li>Pilih konsep video di bagian atas (<strong>Konsep 1 (Fitur)</strong> atau <strong>Konsep 2 (WhatsApp)</strong>).</li>
+          <li>Pilih rasio video yang diinginkan (<strong>Format Vertikal 9:16</strong> untuk TikTok/Reels/Shorts, atau <strong>Format Horizontal 16:9</strong> untuk Youtube/PC).</li>
+          <li>Klik tombol <strong>"Mode Rekam"</strong> di kanan bawah. Semua pengontrol UI, navigasi web, dan footer akan langsung disembunyikan.</li>
+          <li>Buka perekam layar laptop Anda (seperti <strong>OBS Studio</strong>, Loom, atau perekam layar bawaan macOS/Windows).</li>
+          <li>Klik <strong>Play</strong> di video, aktifkan perekaman suara sistem (System Audio Capture) agar musik & efek suara terkam sempurna.</li>
+          <li>Biarkan video berjalan otomatis sampai selesai. Jika sudah selesai, klik tombol <strong>ESC</strong> pada keyboard untuk mengembalikan UI situs Anda kembali semula!</li>
+        </ol>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<!-- Advanced styling using native CSS for maximum styling flexibility, premium dark glassmorphism aesthetic -->
+<style is:global>
+  /* Core Animation Tokens - Elastic & Bouncy Curves for Fluidity (Removes Stiffness!) */
+  :root {
+    --bounce-timing: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --bounce-transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Base Dark Styling for the promo main layout, aligned to websekolahkeren brand */
+  .promo-page-container {
+    position: relative;
+    padding: 140px 0 100px 0;
+    background: #0A0F1E; /* Matches the official dark mode base of websekolahkeren */
+    color: #F8FAFC;
+    overflow: hidden;
+    min-height: 100vh;
+    transition: background 0.8s ease;
+  }
+
+  /* Concept Selector Tabs styling */
+  .concept-selector-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+  }
+  .concept-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px 20px;
+    color: #94A3B8;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .concept-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255,255,255,0.15);
+    color: #F8FAFC;
+    transform: translateY(-2px);
+  }
+  .concept-tab-btn.active {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: var(--accent-2); /* Official brand orange */
+    color: #FFFFFF;
+    box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.2);
+  }
+  .concept-tab-btn:nth-child(2).active {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: var(--success); /* Official brand green */
+    box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.2);
+  }
+  .icon-tab {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: grid;
+    place-items: center;
+    color: #94A3B8;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .concept-tab-btn.active .icon-tab {
+    background: var(--accent-2);
+    color: #FFFFFF;
+  }
+  .concept-tab-btn:nth-child(2).active .icon-tab {
+    background: var(--success);
+    color: #FFFFFF;
+  }
+  .tab-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .tab-title {
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+  .tab-desc {
+    font-size: 11px;
+    color: #64748B;
+    line-height: 1.3;
+  }
+  .concept-tab-btn.active .tab-desc {
+    color: #94A3B8;
+  }
+
+  /* Custom Glow Orbs matching websekolahkeren gradients */
+  .promo-bg-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.25;
+    transition: all 0.8s ease;
+  }
+  .glow-orb.orange-glow {
+    background: var(--accent-2);
+    width: 600px; height: 600px;
+    top: -200px; left: -200px;
+  }
+  .glow-orb.blue-glow {
+    background: var(--accent);
+    width: 700px; height: 700px;
+    bottom: -100px; right: -200px;
+  }
+
+  .container-content {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Header Typography */
+  .promo-header {
+    margin-bottom: 40px;
+  }
+  .promo-header h1 {
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFFFFF 40%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 16px 0;
+    letter-spacing: -0.02em;
+  }
+  .promo-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    border-radius: 999px;
+    color: var(--accent-2);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .lead-text {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #94A3B8;
+  }
+  .lead-text strong {
+    color: #F8FAFC;
+  }
+
+  /* Video Arena Grid */
+  .video-arena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  /* Video Frame Wrapper */
+  .video-frame-wrapper {
+    position: relative;
+    background: #000;
+    border: 6px solid #1e293b;
+    border-radius: 24px; /* Perfectly matching global radius */
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Format Ratios */
+  .video-frame-wrapper.ratio-16-9 {
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+  }
+  .video-frame-wrapper.ratio-9-16 {
+    max-width: 380px;
+    aspect-ratio: 9 / 16;
+  }
+
+  /* Inner Content Box */
+  .video-content-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #070B16;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.8s ease;
+  }
+
+  /* Concept wrappers */
+  .concept-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .concept-wrapper:not(.hide) {
+    pointer-events: auto;
+  }
+
+  /* Scene base settings */
+  .scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.92);
+    z-index: 10;
+  }
+
+  /* Active Scene displays */
+  .video-content-box[data-active-concept="1"][data-active-scene="1"] #c1-scene1,
+  .video-content-box[data-active-concept="1"][data-active-scene="2"] #c1-scene2,
+  .video-content-box[data-active-concept="1"][data-active-scene="3"] #c1-scene3,
+  .video-content-box[data-active-concept="1"][data-active-scene="4"] #c1-scene4,
+  .video-content-box[data-active-concept="1"][data-active-scene="5"] #c1-scene5,
+  
+  .video-content-box[data-active-concept="2"][data-active-scene="1"] #c2-scene1,
+  .video-content-box[data-active-concept="2"][data-active-scene="2"] #c2-scene2,
+  .video-content-box[data-active-concept="2"][data-active-scene="3"] #c2-scene3,
+  .video-content-box[data-active-concept="2"][data-active-scene="4"] #c2-scene4 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    z-index: 20;
+  }
+
+  /* Watermark overlay */
+  .video-watermark {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    right: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 35;
+    pointer-events: none;
+    opacity: 0.5;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #94A3B8;
+  }
+  .w-brand {
+    font-weight: 800;
+    color: var(--accent-2);
+    transition: color 0.5s;
+  }
+
+  /* Escape badge in Record Mode */
+  .record-badge {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    background: rgba(220, 38, 38, 0.9);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(220,38,38,0.4);
+    animation: recordingBlink 1.5s infinite alternate;
+  }
+  .red-record-dot {
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 50%;
+  }
+  @keyframes recordingBlink {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* Play Overlay Button */
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 7, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  .play-overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .play-trigger-btn {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    color: #FFFFFF;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .play-overlay:hover .play-trigger-btn {
+    transform: scale(1.1);
+    box-shadow: 0 0 32px var(--accent-2-glow);
+  }
+  .play-overlay span {
+    font-weight: 700;
+    font-size: 15px;
+    color: #E2E8F0;
+    text-align: center;
+  }
+
+  /* Starry background sky for Space Scenes */
+  .stars-sky {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.25;
+    animation: slowRotateSky 60s linear infinite;
+  }
+  @keyframes slowRotateSky {
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Dynamic visual particle stars */
+  .particles-container {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+  }
+  .sparkle-particle {
+    position: absolute;
+    background: var(--accent-2);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ================= CONCEPT 1: SCENE 1 STYLING ================= */
+  .scene-1 {
+    background: radial-gradient(circle at center, #170d07 0%, #060301 100%);
+  }
+  .sad-face-icon {
+    color: #EF4444;
+    margin-bottom: 12px;
+    animation: slowShake 4s ease-in-out infinite;
+  }
+  .scene-title {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+    color: #F8FAFC;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.25;
+  }
+  .problem-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 80%;
+    margin-bottom: 24px;
+  }
+  .problem-tag {
+    padding: 6px 12px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius);
+    color: #FCA5A5;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .problem-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  .tag-1 { animation: jitter1 3s infinite alternate; }
+  .tag-2 { animation: jitter2 2.5s infinite alternate; }
+  .tag-3 { animation: jitter3 3.5s infinite alternate; }
+  .tag-4 { animation: jitter1 4s infinite alternate; }
+  .tag-5 { animation: jitter2 3s infinite alternate; }
+
+  @keyframes jitter1 {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-6px) rotate(-2deg); }
+  }
+  @keyframes jitter2 {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(5px) rotate(3deg); }
+  }
+  @keyframes jitter3 {
+    0% { transform: translateY(0) rotate(-1deg); }
+    100% { transform: translateY(8px) rotate(1deg); }
+  }
+
+  /* Simulated slow browser in scene 1 */
+  .simulated-browser {
+    width: 65%;
+    background: #0a0604;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  }
+  .ratio-9-16 .simulated-browser {
+    width: 85%;
+  }
+  .sb-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #140c08;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+  }
+  .sb-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #3c1a1a;
+  }
+  .sb-dot:first-child { background: #ef4444; }
+  .sb-url {
+    flex: 1;
+    font-size: 10px;
+    font-family: monospace;
+    background: #000;
+    border-radius: 4px;
+    padding: 3px;
+    text-align: center;
+    color: #ef4444;
+  }
+  .sb-body {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+  }
+  .spinner-loading {
+    width: 24px; height: 24px;
+    border: 2px solid rgba(239, 68, 68, 0.2);
+    border-top-color: #ef4444;
+    border-radius: 50%;
+    animation: slowSpin 1s linear infinite;
+  }
+  .error-msg {
+    font-size: 11px;
+    font-family: monospace;
+    color: #f87171;
+    font-weight: bold;
+    animation: blinkText 1.5s step-end infinite;
+  }
+
+  /* ================= SCENE 1.2 STYLING ================= */
+  .scene-2 {
+    background: radial-gradient(circle at center, #0c1224 0%, #05070e 100%);
+  }
+  .space-rocket-group {
+    transform: scale(0.95);
+    margin-bottom: 16px;
+    transition: var(--bounce-transition);
+  }
+  .solution-glow-text {
+    text-align: center;
+  }
+  .small-tag {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--accent-2);
+    margin-bottom: 4px;
+    text-shadow: 0 0 8px var(--accent-2-glow);
+  }
+  .big-brand {
+    font-size: clamp(24px, 4vw, 36px);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+  .big-brand span {
+    font-weight: 800;
+    color: var(--accent-2);
+    text-shadow: 0 0 16px var(--accent-2-glow);
+  }
+
+  /* Rocket floating waves */
+  .float-soft {
+    animation: rocketFloatSin 4s ease-in-out infinite;
+  }
+  @keyframes rocketFloatSin {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+  }
+
+  .video-content-box[data-active-scene="2"] .space-rocket-group {
+    animation: rocketLaunchBounce 5.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes rocketLaunchBounce {
+    0% {
+      transform: translate(-100px, 150px) scale(0.6) rotate(-20deg);
+      opacity: 0;
+    }
+    35% {
+      transform: translate(15px, -15px) scale(1.05) rotate(4deg);
+      opacity: 1;
+    }
+    60% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(0px, -4px) scale(1.01) rotate(0deg);
+    }
+  }
+
+  /* ================= SCENE 1.3 STYLING ================= */
+  .scene-3 {
+    background: radial-gradient(circle at center, #0F172A 0%, #060913 100%);
+  }
+  .features-title {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: 800;
+    color: #F8FAFC;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  /* Multi-device layouts */
+  .device-mockups-container {
+    position: relative;
+    width: 80%;
+    height: 180px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .ratio-9-16 .device-mockups-container {
+    width: 95%;
+    height: 320px;
+    transform: scale(0.85);
+  }
+
+  /* Device mockups bouncy transition definitions */
+  .device-laptop {
+    width: 60%;
+    z-index: 15;
+    position: relative;
+    transform: translateY(0);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .device-laptop {
+    width: 78%;
+    position: absolute;
+    bottom: 45%;
+    left: 5%;
+  }
+  .dl-screen {
+    border: 5px solid #1e293b;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    background: #020617;
+  }
+  .dl-topbar {
+    background: #0f172a;
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .dl-topbar .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #475569;
+  }
+  .dl-topbar .url {
+    flex: 1;
+    font-size: 6px;
+    color: #94A3B8;
+    text-align: center;
+    font-family: monospace;
+  }
+  .dl-img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .dl-base {
+    width: 110%;
+    margin-left: -5%;
+    height: 6px;
+    background: #475569;
+    border-radius: 0 0 6px 6px;
+  }
+
+  /* Tablet */
+  .device-tablet {
+    width: 20%;
+    aspect-ratio: 3/4;
+    background: #0f172a;
+    border: 5px solid #1e293b;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 18;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    overflow: hidden;
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .device-tablet {
+    width: 38%;
+    bottom: 12%;
+    left: 4%;
+  }
+  .dt-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Phone */
+  .device-phone {
+    width: 13%;
+    aspect-ratio: 9/19;
+    background: #020617;
+    border: 4px solid #0f172a;
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    z-index: 22;
+    position: absolute;
+    bottom: -10%;
+    right: 12%;
+    overflow: hidden;
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .device-phone {
+    width: 25%;
+    bottom: 8%;
+    right: 6%;
+  }
+  .dp-notch {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40%; height: 6px;
+    background: #0f172a;
+    border-radius: 0 0 4px 4px;
+    z-index: 25;
+  }
+  .dp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Bullet features list in Scene 3 */
+  .feature-bullets {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    max-width: 90%;
+  }
+  .ratio-9-16 .feature-bullets {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    width: 80%;
+  }
+  .bullet-item {
+    font-size: 13px;
+    font-weight: 700;
+    color: #E2E8F0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: var(--bounce-transition);
+  }
+  .bullet-item .check-ico {
+    color: var(--accent-2);
+    font-weight: 900;
+  }
+
+  .video-content-box[data-active-concept="1"][data-active-scene="3"] .device-laptop {
+    animation: mockupBounceIn 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .video-content-box[data-active-concept="1"][data-active-scene="3"] .device-tablet {
+    animation: mockupBounceInLeft 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s forwards;
+  }
+  .video-content-box[data-active-concept="1"][data-active-scene="3"] .device-phone {
+    animation: mockupBounceInRight 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s forwards;
+  }
+
+  @keyframes mockupBounceIn {
+    0% { transform: translateY(90px) scale(0.9); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  @keyframes mockupBounceInLeft {
+    0% { transform: translate(-70px, 30px) scale(0.88); opacity: 0; }
+    100% { transform: translate(0, 0) scale(1); opacity: 1; }
+  }
+  @keyframes mockupBounceInRight {
+    0% { transform: translate(70px, 30px) scale(0.88); opacity: 0; }
+    100% { transform: translate(0, 0) scale(1); opacity: 1; }
+  }
+
+  /* ================= SCENE 1.4 STYLING ================= */
+  .scene-4 {
+    background: radial-gradient(circle at center, #0A0F1E 0%, #04060C 100%);
+  }
+  .animation-steps {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 80%;
+    margin-bottom: 24px;
+  }
+  .ratio-9-16 .animation-steps {
+    width: 90%;
+    gap: 6px;
+  }
+  .anim-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 6px;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: var(--bounce-transition);
+  }
+  .anim-step .step-badge {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 10px var(--accent-2-glow);
+  }
+  .anim-step .step-txt {
+    font-size: 11px;
+    font-weight: 700;
+    color: #CBD5E1;
+  }
+  .ratio-9-16 .anim-step .step-txt {
+    font-size: 8.5px;
+  }
+
+  /* Epic Price Tag Card */
+  .price-showcase-card {
+    position: relative;
+    width: 50%;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .price-showcase-card {
+    width: 85%;
+    padding: 16px 20px;
+  }
+  .card-glow {
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, var(--accent-2-glow) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .p-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-2);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .p-cost {
+    font-size: clamp(28px, 4vw, 40px);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+  .p-cost span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #94A3B8;
+  }
+  .p-features-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+  .p-features-mini span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+  }
+
+  .video-content-box[data-active-concept="1"][data-active-scene="4"] .price-showcase-card {
+    animation: cardBounceZoom 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes cardBounceZoom {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* ================= SCENE 1.5 STYLING ================= */
+  .scene-5 {
+    background: radial-gradient(circle at center, #0A0F1E 0%, #04060C 100%);
+  }
+  .cta-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .cta-logo-img {
+    width: 32px; height: 32px;
+    background: #111827;
+    border-radius: 8px;
+    padding: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .cta-logo span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+  }
+  .cta-logo span strong {
+    color: var(--accent-2);
+  }
+  .cta-title {
+    font-size: clamp(18px, 3.5vw, 30px);
+    font-weight: 800;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    line-height: 1.25;
+  }
+  .cta-desc {
+    font-size: 13.5px;
+    color: #94A3B8;
+    max-width: 75%;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .ratio-9-16 .cta-desc {
+    max-width: 90%;
+    font-size: 12px;
+  }
+
+  /* WhatsApp CTA button in dark concept */
+  .wa-pulsate-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--wa-green);
+    color: var(--wa-green-text);
+    font-size: 14.5px;
+    font-weight: 800;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+    animation: btnPulseGlow 2s infinite alternate;
+  }
+  .ratio-9-16 .wa-pulsate-btn {
+    padding: 12px 20px;
+    font-size: 12.5px;
+    width: 90%;
+    justify-content: center;
+  }
+  .wa-pulsate-btn svg {
+    flex-shrink: 0;
+  }
+  .wa-phone-number {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #64748B;
+  }
+  .wa-phone-number strong {
+    color: var(--accent-2);
+  }
+
+  @keyframes btnPulseGlow {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 16px var(--wa-green-glow);
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0 8px 32px var(--wa-green-glow);
+    }
+  }
+
+
+  /* ========================================================================= */
+  /* ==================== CONCEPT 2: TEMA CERAH (LIGHT MODE) ==================== */
+  /* ========================================================================= */
+
+  /* Aligned exactly with the clean aesthetic of websekolahkeren default light mode */
+  .video-content-box.theme-bright {
+    background: radial-gradient(circle at center, #FFFFFF 0%, #F8FAFC 100%) !important;
+  }
+  /* WebSekolahKeren Dot Grid pattern inside bright video player */
+  .video-content-box.theme-bright::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  /* Bright Watermark Override */
+  .video-content-box.theme-bright .video-watermark {
+    color: #64748B !important;
+  }
+  .video-content-box.theme-bright .w-brand {
+    color: var(--accent-2) !important; /* Orange branding accent */
+  }
+
+  /* CONCEPT 2 - SCENE 1 STYLING (WA Messages Overflow) */
+  #c2-scene1 {
+    background: transparent !important;
+  }
+  .c2-bubble-warning-badge {
+    position: absolute;
+    bottom: 22%;
+    background: #EF4444;
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.2);
+    animation: jitter1 1.5s infinite alternate;
+  }
+  .ratio-9-16 .c2-bubble-warning-badge {
+    bottom: 25%;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  /* Phone flat mockup for WA chats simulation */
+  .wa-chat-visualizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .ratio-9-16 .wa-chat-visualizer {
+    flex-direction: column;
+    width: 95%;
+    height: 340px;
+    gap: 10px;
+  }
+  
+  .phone-frame-flat {
+    width: 50%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 3.5px solid #0F172A;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .phone-frame-flat {
+    width: 90%;
+    height: 60%;
+  }
+  .pf-header {
+    background: #075E54;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+  }
+  .pf-title {
+    font-size: 11.5px;
+    font-weight: bold;
+  }
+  .pf-status {
+    font-size: 8px;
+    opacity: 0.8;
+  }
+  .pf-body {
+    background: #E5DDD5;
+    flex: 1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+  }
+  .chat-bubble {
+    background: #FFFFFF;
+    padding: 8px 10px;
+    border-radius: 0 10px 10px 10px;
+    max-width: 85%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: var(--bounce-transition);
+  }
+  .chat-sender {
+    font-size: 8px;
+    font-weight: 800;
+    color: #075E54;
+  }
+  .chat-bubble p {
+    font-size: 9.5px;
+    color: #1e293b;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* Staggered bouncy entrances for chat bubbles */
+  .c2-tag-1 { transform: scale(0) translateY(20px); opacity: 0; }
+  .c2-tag-2 { transform: scale(0) translateY(20px); opacity: 0; }
+  .c2-tag-3 { transform: scale(0) translateY(20px); opacity: 0; }
+  
+  .video-content-box[data-active-concept="2"][data-active-scene="1"] .c2-tag-1 {
+    animation: bubbleBounceUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
+  }
+  .video-content-box[data-active-concept="2"][data-active-scene="1"] .c2-tag-2 {
+    animation: bubbleBounceUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards;
+  }
+  .video-content-box[data-active-concept="2"][data-active-scene="1"] .c2-tag-3 {
+    animation: bubbleBounceUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 3.2s forwards;
+  }
+
+  @keyframes bubbleBounceUp {
+    0% { transform: scale(0.6) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  /* Expiring Story clock countdown */
+  .story-expiry-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 38%;
+    animation: jitter2 2s infinite alternate;
+    transition: var(--bounce-transition);
+  }
+  .ratio-9-16 .story-expiry-visual {
+    width: 60%;
+    height: 25%;
+    flex-direction: row;
+    padding: 8px 12px;
+  }
+  .expiry-circle-ring {
+    position: relative;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: grid;
+    place-items: center;
+    border: 3px solid #10B981; /* WA green story ring */
+    animation: ringSpin 5s linear infinite;
+  }
+  .ratio-9-16 .expiry-circle-ring {
+    width: 36px; height: 36px;
+  }
+  .expiry-pie {
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: conic-gradient(#10B981 0%, #10B981 100%);
+    animation: clockPie 7s linear forwards;
+  }
+  .expiry-time {
+    position: relative;
+    z-index: 10;
+    font-size: 9px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .expiry-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #EF4444;
+    text-align: center;
+  }
+
+  .video-content-box[data-active-concept="2"][data-active-scene="1"] #storyExpiryBox {
+    animation: storyPoofBounce 7s ease forwards;
+  }
+  @keyframes storyPoofBounce {
+    0%, 75% { transform: scale(1); opacity: 1; }
+    80% { transform: scale(1.15); opacity: 0.95; filter: blur(0); }
+    85%, 100% { transform: scale(0.3) translateY(30px); opacity: 0; filter: blur(10px); }
+  }
+
+  /* CONCEPT 2 - SCENE 2 STYLING (Solution portal reveal) */
+  #c2-scene2 {
+    background: transparent !important;
+  }
+  .shining-portal-wrapper {
+    position: relative;
+    width: 140px; height: 140px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+  }
+  .glow-portal {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 20%, rgba(249, 115, 22, 0) 70%);
+    opacity: 0.8;
+    animation: portalPulse 2s ease-in-out infinite alternate;
+  }
+  .flying-logo-icon {
+    position: relative;
+    z-index: 15;
+    width: 70px; height: 70px;
+    background: #FFFFFF;
+    border: 2px solid var(--accent-2);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: 0 12px 30px var(--accent-2-glow);
+  }
+  
+  .c2-solution-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 18px 24px;
+    max-width: 80%;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .c2-card-sub {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--accent-2);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .c2-card-main {
+    font-size: clamp(20px, 3.2vw, 28px);
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .c2-card-desc {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-2);
+  }
+
+  .video-content-box[data-active-concept="2"][data-active-scene="2"] .shining-portal-wrapper {
+    animation: flyingLogoBounce 6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes flyingLogoBounce {
+    0% { transform: translateY(100px) scale(0.6); opacity: 0; }
+    30% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-4px) scale(1.02); }
+  }
+
+  /* CONCEPT 2 - SCENE 3 STYLING (Features grid cards) */
+  #c2-scene3 {
+    background: transparent !important;
+  }
+  .c2-bright-title {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .c2-features-grid {
+    display: flex;
+    gap: 16px;
+    width: 85%;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+  .ratio-9-16 .c2-features-grid {
+    flex-direction: column;
+    gap: 8px;
+    width: 90%;
+    transform: scale(0.9);
+  }
+  .c2-feat-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: var(--radius);
+    padding: 16px 10px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: var(--bounce-transition);
+  }
+  .c2-icon-wrap {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+  }
+  .card-cyan .c2-icon-wrap { background: #EFF6FF; color: var(--accent); }
+  .card-emerald .c2-icon-wrap { background: #ECFDF5; color: #10B981; }
+  .card-amber .c2-icon-wrap { background: #FFF7ED; color: var(--accent-2); }
+  
+  .c2-feat-card h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+  }
+  .c2-feat-card p {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.35;
+    margin: 0;
+  }
+  .c2-trust-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+  .c2-trust-row span {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--accent-2);
+  }
+  .ratio-9-16 .c2-trust-row {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  /* Entrance animations for C2 cards stagger */
+  .video-content-box[data-active-concept="2"][data-active-scene="3"] .card-cyan {
+    animation: featCardBounceEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+  }
+  .video-content-box[data-active-concept="2"][data-active-scene="3"] .card-emerald {
+    animation: featCardBounceEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
+  }
+  .video-content-box[data-active-concept="2"][data-active-scene="3"] .card-amber {
+    animation: featCardBounceEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards;
+  }
+  @keyframes featCardBounceEntrance {
+    0% { opacity: 0; transform: translateY(40px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* CONCEPT 2 - SCENE 4 STYLING (Price & CTA) */
+  #c2-scene4 {
+    background: transparent !important;
+  }
+  .c2-final-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .logo-mini-c2 {
+    width: 28px; height: 28px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 5px;
+    border: 1px solid var(--accent-2);
+  }
+  .c2-final-logo-row span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    color: #0F172A;
+  }
+  .c2-final-logo-row span strong {
+    color: var(--accent-2);
+  }
+  .c2-final-title {
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 800;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 20px;
+    line-height: 1.25;
+  }
+  
+  .c2-price-tag {
+    background: #FFFFFF;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    width: 70%;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    animation: cardBounceZoom 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .ratio-9-16 .c2-price-tag {
+    width: 88%;
+    padding: 10px 14px;
+  }
+  .badge-tag {
+    display: inline-block;
+    padding: 2.5px 10px;
+    background: var(--accent-2-soft);
+    color: var(--accent-2);
+    font-size: 9px;
+    font-weight: 800;
+    border-radius: 99px;
+    margin-bottom: 4px;
+  }
+  .c2-price-tag .cost {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .c2-price-tag .cost span {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .c2-price-tag .meta {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent-2);
+    margin: 0;
+  }
+  .c2-wa-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--wa-green);
+    color: var(--wa-green-text);
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 99px;
+    text-decoration: none;
+    animation: btnPulseGlow 2s infinite alternate;
+  }
+  .ratio-9-16 .c2-wa-btn {
+    padding: 10px 18px;
+    font-size: 11.5px;
+    width: 90%;
+    justify-content: center;
+  }
+  .c2-phone-num {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .c2-phone-num strong {
+    color: var(--accent-2);
+  }
+
+
+  /* ========================================================================= */
+  /* ===================== CONTROL PANEL / TABS GENERAL ===================== */
+  /* ========================================================================= */
+
+  /* Glassmorphic control panel */
+  .player-controls-panel {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .ratio-9-16 ~ .player-controls-panel {
+    max-width: 380px;
+  }
+
+  /* Timeline Slider */
+  .timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .time-lbl {
+    font-family: monospace;
+    font-size: 12px;
+    color: #94A3B8;
+  }
+  .progress-bar-track {
+    position: relative;
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .progress-bar-fill {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-2), #ea580c);
+    border-radius: 999px;
+    width: 0%;
+  }
+
+  /* Bright theme progress filler matches orange branding */
+  .theme-bright ~ .player-controls-panel .progress-bar-fill {
+    background: linear-gradient(90deg, var(--accent-2), #ea580c) !important;
+  }
+
+  .progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    cursor: grab;
+  }
+
+  /* Ticks indicators */
+  .ticks-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .scene-tick {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 6px;
+    background: rgba(255,255,255,0.4);
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  /* Controls Buttons Layout */
+  .controls-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .ctrl-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    display: grid;
+    place-items: center;
+    transition: all 0.2s;
+  }
+  .ctrl-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .ctrl-btn-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .ctrl-btn-action:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  /* Record Mode button */
+  .ctrl-btn-record {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    color: #FCA5A5;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .ctrl-btn-record:hover {
+    background: rgba(220, 38, 38, 0.3);
+    box-shadow: 0 0 12px rgba(220,38,38,0.3);
+  }
+  .record-red-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #EF4444;
+    animation: btnPulseDot 1s infinite alternate;
+  }
+
+  /* Scene selectors */
+  .scene-select-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    background: transparent;
+    transition: all 0.2s;
+  }
+  .scene-select-btn:hover {
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.05);
+  }
+  .scene-select-btn.active {
+    color: var(--accent-2) !important;
+    background: rgba(249, 115, 22, 0.1) !important;
+  }
+
+  /* ================= INSTRUCTIONS PANEL ================= */
+  .instructions-panel {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(15, 23, 42, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .instructions-panel h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-2);
+    margin-bottom: 12px;
+    transition: color 0.5s;
+  }
+  .instructions-panel ol {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13.5px;
+    color: #94A3B8;
+    line-height: 1.6;
+  }
+  .instructions-panel li strong {
+    color: #E2E8F0;
+  }
+
+  /* ================= RECORD MODE OVERRIDES ================= */
+  body.record-active .promo-page-container {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    height: 100vh;
+  }
+  body.record-active .promo-header,
+  body.record-active .player-controls-panel,
+  body.record-active .instructions-panel,
+  body.record-active #nav,
+  body.record-active footer,
+  body.record-active .promo-bg-glow,
+  body.record-active .concept-selector-tabs {
+    display: none !important;
+  }
+  body.record-active .video-frame-wrapper {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+  body.record-active #recordEscapeBadge {
+    display: flex;
+  }
+
+  /* Helper Classes */
+  .hide { display: none !important; }
+  .text-center { text-align: center; }
+  .reveal-in {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: revealInAnimation 0.8s ease forwards;
+  }
+  @keyframes revealInAnimation {
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .promo-page-container {
+      padding: 100px 0 60px 0;
+    }
+    .hide-tablet { display: none !important; }
+    .concept-selector-tabs {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+</style>
+
+<!-- Player timeline animation engine & Web Audio API sound designer code -->
+<script>
+  // Dynamic Timing Configurations (Narration text lists removed from UI overlay, kept only in console/logs for reference)
+  const CONCEPT_DATA = {
+    "1": {
+      duration: 40,
+      bpm: 90,
+      bgmIntervalSec: 2.0,
+      ticks: [
+        { sec: 0, label: "1. Masalah" },
+        { sec: 8, label: "2. Solusi" },
+        { sec: 14, label: "3. Tampilan" },
+        { sec: 24, label: "4. Harga" },
+        { sec: 32, label: "5. Kontak" }
+      ]
+    },
+    "2": {
+      duration: 25,
+      bpm: 125, // Upbeat dynamic speed
+      bgmIntervalSec: 1.5, // Shorter interval between chord sweeps
+      ticks: [
+        { sec: 0, label: "1. Hook WA" },
+        { sec: 7, label: "2. Solusi" },
+        { sec: 13, label: "3. Manfaat" },
+        { sec: 19, label: "4. Promo" }
+      ]
+    }
+  };
+
+  // Global player state
+  let activeConcept: "1" | "2" = "1";
+  let currentTime = 0;
+  let isPlaying = false;
+  let isMuted = true;
+  let animationFrameId: number | null = null;
+  let lastFrameTime = 0;
+
+  // Web Audio Nodes
+  let audioCtx: AudioContext | null = null;
+  let masterGain: GainNode | null = null;
+  let bgmInterval: any = null;
+  let currentChordOscillators: OscillatorNode[] = [];
+
+  // DOM Elements
+  const videoBox = document.getElementById('videoBox') as HTMLDivElement;
+  const videoWrapper = document.getElementById('videoWrapper') as HTMLDivElement;
+  const timeCurrent = document.getElementById('timeCurrent') as HTMLSpanElement;
+  const timeDuration = document.getElementById('timeDuration') as HTMLSpanElement;
+  const progressBarFill = document.getElementById('progressBarFill') as HTMLDivElement;
+  const progressHandle = document.getElementById('progressHandle') as HTMLDivElement;
+  const progressTrack = document.getElementById('progressTrack') as HTMLDivElement;
+  const btnPlayPause = document.getElementById('btnPlayPause') as HTMLButtonElement;
+  const btnRestart = document.getElementById('btnRestart') as HTMLButtonElement;
+  const btnSound = document.getElementById('btnSound') as HTMLButtonElement;
+  const btnToggleFormat = document.getElementById('btnToggleFormat') as HTMLButtonElement;
+  const btnRecordMode = document.getElementById('btnRecordMode') as HTMLButtonElement;
+  const playOverlay = document.getElementById('playOverlay') as HTMLDivElement;
+  const watermarkSceneNum = document.getElementById('watermarkSceneNum') as HTMLSpanElement;
+  const formatText = document.getElementById('formatText') as HTMLSpanElement;
+  
+  // Toggles & Selection wrappers
+  const ticksContainer = document.getElementById('ticksContainer') as HTMLDivElement;
+  const sceneSelectorsContainer = document.getElementById('sceneSelectorsContainer') as HTMLDivElement;
+  const concept1Wrapper = document.getElementById('concept1Wrapper') as HTMLDivElement;
+  const concept2Wrapper = document.getElementById('concept2Wrapper') as HTMLDivElement;
+  
+  // Tabs UI buttons
+  const tabConcept1 = document.getElementById('tabConcept1') as HTMLButtonElement;
+  const tabConcept2 = document.getElementById('tabConcept2') as HTMLButtonElement;
+
+  const iconPlay = btnPlayPause.querySelector('.icon-play') as SVGElement;
+  const iconPause = btnPlayPause.querySelector('.icon-pause') as SVGElement;
+  const iconSoundOff = btnSound.querySelector('.icon-sound-off') as SVGElement;
+  const iconSoundOn = btnSound.querySelector('.icon-sound-on') as SVGElement;
+
+  // -------------------------------------------------------------
+  // CONCEPT SWAPPER LOGIC
+  // -------------------------------------------------------------
+  function switchConcept(conceptId: "1" | "2") {
+    pauseVideo();
+    activeConcept = conceptId;
+    currentTime = 0;
+    
+    const config = CONCEPT_DATA[activeConcept];
+    
+    // 1. Update wrappers
+    videoBox.setAttribute('data-active-concept', String(activeConcept));
+    
+    if (activeConcept === "1") {
+      concept1Wrapper.classList.remove('hide');
+      concept2Wrapper.classList.add('hide');
+      videoBox.classList.remove('theme-bright');
+      
+      // Update page headers for orange accent
+      document.getElementById('instructionsPanel')?.querySelectorAll('h3').forEach(el => el.style.color = 'var(--accent-2)');
+      tabConcept1.classList.add('active');
+      tabConcept2.classList.remove('active');
+    } else {
+      concept1Wrapper.classList.add('hide');
+      concept2Wrapper.classList.remove('hide');
+      videoBox.classList.add('theme-bright');
+      
+      // Update page headers for green accent
+      document.getElementById('instructionsPanel')?.querySelectorAll('h3').forEach(el => el.style.color = 'var(--accent-2)');
+      tabConcept1.classList.remove('active');
+      tabConcept2.classList.add('active');
+    }
+    
+    // 2. Redraw progress ticks and scene selector buttons
+    renderTimelineControls();
+    
+    // 3. Update timing tags
+    const minStr = String(Math.floor(config.duration / 60)).padStart(2, '0');
+    const secStr = String(config.duration % 60).padStart(2, '0');
+    timeDuration.innerText = `${minStr}:${secStr}`;
+    
+    updateUI();
+  }
+
+  // Draw scene tick indicators & scene selector buttons dynamically based on active concept metadata
+  function renderTimelineControls() {
+    const config = CONCEPT_DATA[activeConcept];
+    
+    // Clear old elements
+    ticksContainer.innerHTML = "";
+    sceneSelectorsContainer.innerHTML = "";
+    
+    config.ticks.forEach((tick, idx) => {
+      const leftPct = (tick.sec / config.duration) * 100;
+      
+      // Progress tick marks
+      const tickSpan = document.createElement('span');
+      tickSpan.classList.add('scene-tick');
+      tickSpan.style.left = `${leftPct}%`;
+      tickSpan.title = tick.label;
+      tickSpan.dataset.targetSec = String(tick.sec);
+      tickSpan.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentTime = tick.sec;
+        updateUI();
+        if (!isPlaying) playVideo();
+      });
+      ticksContainer.appendChild(tickSpan);
+      
+      // Control panel selector button
+      const selBtn = document.createElement('button');
+      selBtn.classList.add('scene-select-btn');
+      if (idx === 0) selBtn.classList.add('active');
+      selBtn.innerText = tick.label;
+      selBtn.dataset.scene = String(idx + 1);
+      selBtn.addEventListener('click', () => {
+        currentTime = tick.sec;
+        updateUI();
+        if (!isPlaying) playVideo();
+      });
+      sceneSelectorsContainer.appendChild(selBtn);
+    });
+  }
+
+  // Bind concepts selector tab clicks
+  tabConcept1.addEventListener('click', () => switchConcept("1"));
+  tabConcept2.addEventListener('click', () => switchConcept("2"));
+
+  // -------------------------------------------------------------
+  // AUDIO SYNTHESIS ENGINE (WEB AUDIO API)
+  // -------------------------------------------------------------
+  function initAudio() {
+    if (audioCtx) return;
+    try {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      audioCtx = new AudioCtx();
+      masterGain = audioCtx.createGain();
+      
+      // Master lowpass filter for analogue warmth
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(1400, audioCtx.currentTime);
+      
+      masterGain.connect(filter);
+      filter.connect(audioCtx.destination);
+      masterGain.gain.setValueAtTime(isMuted ? 0 : 0.4, audioCtx.currentTime);
+      
+      // Sequencer kickoff
+      startSequencer();
+    } catch (e) {
+      console.warn("Audio Context fails to load", e);
+    }
+  }
+
+  function toggleSound() {
+    isMuted = !isMuted;
+    if (isMuted) {
+      iconSoundOn.classList.add('hide');
+      iconSoundOff.classList.remove('hide');
+      if (masterGain && audioCtx) {
+        masterGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+      }
+    } else {
+      iconSoundOff.classList.add('hide');
+      iconSoundOn.classList.remove('hide');
+      initAudio();
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      if (masterGain && audioCtx) {
+        masterGain.gain.exponentialRampToValueAtTime(0.35, audioCtx.currentTime + 0.2);
+      }
+    }
+  }
+
+  // Play custom procedural sound effect
+  function triggerSfx(type: string) {
+    if (!audioCtx || isMuted) return;
+    if (audioCtx.state === 'suspended') return;
+
+    const now = audioCtx.currentTime;
+    
+    switch (type) {
+      case 'alert': // Warning ring for problems
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const alertGain = audioCtx.createGain();
+        
+        osc1.type = 'sawtooth';
+        osc1.frequency.setValueAtTime(160, now);
+        osc2.type = 'square';
+        osc2.frequency.setValueAtTime(164, now);
+        
+        alertGain.gain.setValueAtTime(0.2, now);
+        alertGain.gain.linearRampToValueAtTime(0.001, now + 0.4);
+        
+        osc1.connect(alertGain);
+        osc2.connect(alertGain);
+        alertGain.connect(masterGain!);
+        
+        osc1.start(now);
+        osc2.start(now);
+        osc1.stop(now + 0.4);
+        osc2.stop(now + 0.4);
+        break;
+
+      case 'swoosh': // Jet swoosh filter sweep (Rocket flying / portal solution)
+        const bufferSize = audioCtx.sampleRate * 2.0;
+        const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        
+        const whiteNoise = audioCtx.createBufferSource();
+        whiteNoise.buffer = noiseBuffer;
+        
+        const noiseFilter = audioCtx.createBiquadFilter();
+        noiseFilter.type = 'bandpass';
+        noiseFilter.Q.setValueAtTime(2.0, now);
+        noiseFilter.frequency.setValueAtTime(150, now);
+        
+        // Brighter sweeps for solution reveals
+        const sweepEnd = activeConcept === "2" ? 3400 : 2200;
+        noiseFilter.frequency.exponentialRampToValueAtTime(sweepEnd, now + 1.2);
+        noiseFilter.frequency.exponentialRampToValueAtTime(300, now + 2.0);
+        
+        const noiseGain = audioCtx.createGain();
+        noiseGain.gain.setValueAtTime(0.001, now);
+        noiseGain.gain.linearRampToValueAtTime(0.35, now + 0.5);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+        
+        whiteNoise.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(masterGain!);
+        
+        whiteNoise.start(now);
+        whiteNoise.stop(now + 2.0);
+        break;
+
+      case 'pop': // Bubble pop sound for gelembung chats
+        const popOsc = audioCtx.createOscillator();
+        const popGain = audioCtx.createGain();
+        
+        popOsc.type = 'sine';
+        const startFreq = activeConcept === "2" ? 320 : 180;
+        const endFreq = activeConcept === "2" ? 950 : 650;
+        popOsc.frequency.setValueAtTime(startFreq, now);
+        popOsc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.08);
+        
+        popGain.gain.setValueAtTime(0.2, now);
+        popGain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+        
+        popOsc.connect(popGain);
+        popGain.connect(masterGain!);
+        
+        popOsc.start(now);
+        popOsc.stop(now + 0.1);
+        break;
+
+      case 'chime': // Upbeat bright arpeggio chime chord representing female voice tone chimes
+        const frequencies = activeConcept === "2" 
+          ? [659.25, 783.99, 987.77, 1318.51] // E5, G5, B5, E6 (Bright high chimes)
+          : [523.25, 659.25, 783.99, 1046.5];  // C5, E5, G5, C6 (Inspiring major chimes)
+        
+        frequencies.forEach((freq, index) => {
+          const chimeOsc = audioCtx!.createOscillator();
+          const chimeGain = audioCtx!.createGain();
+          
+          chimeOsc.type = 'sine';
+          chimeOsc.frequency.setValueAtTime(freq, now + index * 0.05); // fast arpeggio
+          
+          chimeGain.gain.setValueAtTime(0.001, now);
+          chimeGain.gain.linearRampToValueAtTime(0.12, now + index * 0.05 + 0.02);
+          chimeGain.gain.exponentialRampToValueAtTime(0.001, now + index * 0.05 + 1.2);
+          
+          chimeOsc.connect(chimeGain);
+          chimeGain.connect(masterGain!);
+          
+          chimeOsc.start(now);
+          chimeOsc.stop(now + 2);
+        });
+        break;
+    }
+  }
+
+  // Synthesizes the background looping music track prosedurally
+  function startSequencer() {
+    if (bgmInterval) clearInterval(bgmInterval);
+    
+    const config = CONCEPT_DATA[activeConcept];
+    const intervalMs = config.bgmIntervalSec * 1000;
+    
+    bgmInterval = setInterval(() => {
+      if (!isPlaying || !audioCtx || audioCtx.state === 'suspended') return;
+      
+      const now = audioCtx.currentTime;
+      let chord: number[] = [];
+      
+      if (activeConcept === "1") {
+        if (currentTime < 8) {
+          chord = [130.81, 196.00, 311.13, 523.25]; // C Minor (Sad)
+        } else if (currentTime >= 8 && currentTime < 14) {
+          chord = [130.81, 196.00, 329.63, 523.25]; // C Major (Grand kickoff)
+        } else if (currentTime >= 14 && currentTime < 24) {
+          chord = [174.61, 261.63, 440.00, 698.46]; // F Major (Tech flow)
+        } else if (currentTime >= 24 && currentTime < 32) {
+          chord = [196.00, 293.66, 493.88, 783.99]; // G Major (Prices climb)
+        } else {
+          chord = [130.81, 196.00, 329.63, 392.00]; // C Major high (Conclusion)
+        }
+      } else {
+        // Concept 2: Higher, lincah, bright Major progression representing voiceover wanita vibe
+        if (currentTime < 7) {
+          chord = [174.61, 349.23, 440.00, 523.25]; // F Major 4 (Tension/tick-tock)
+        } else if (currentTime >= 7 && currentTime < 13) {
+          chord = [261.63, 329.63, 392.00, 523.25]; // C Major (Portal solution reveal!)
+        } else if (currentTime >= 13 && currentTime < 19) {
+          chord = [220.00, 329.63, 440.00, 523.25]; // A Minor (Melodic expansion)
+        } else {
+          chord = [196.00, 293.66, 392.00, 493.88]; // G Major (Final happy CTA beat!)
+        }
+      }
+
+      // Stop previous pads
+      currentChordOscillators.forEach(osc => {
+        try { osc.stop(now + 0.3); } catch(err){}
+      });
+      currentChordOscillators = [];
+
+      // Trigger warm triangle waves for chord base
+      chord.forEach(freq => {
+        const osc = audioCtx!.createOscillator();
+        const oscGain = audioCtx!.createGain();
+        
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now);
+        
+        oscGain.gain.setValueAtTime(0.001, now);
+        const volumeFactor = activeConcept === "2" ? 0.045 : 0.05;
+        oscGain.gain.linearRampToValueAtTime(volumeFactor, now + 0.6);
+        oscGain.gain.exponentialRampToValueAtTime(0.001, now + config.bgmIntervalSec - 0.1);
+        
+        osc.connect(oscGain);
+        oscGain.connect(masterGain!);
+        
+        osc.start(now);
+        currentChordOscillators.push(osc);
+      });
+
+      // Procedural drum loops: faster and punchier in Concept 2!
+      if (activeConcept === "1") {
+        if (currentTime >= 14 && currentTime < 36) {
+          triggerKick(now); triggerKick(now + 0.5); triggerKick(now + 1.0); triggerKick(now + 1.5);
+          triggerSnap(now + 0.5); triggerSnap(now + 1.5);
+        }
+      } else {
+        if (currentTime >= 7 && currentTime < 23) {
+          const step = 60 / 125; // 0.48s per beat at 125 BPM
+          triggerKick(now); triggerKick(now + step * 2);
+          triggerSnap(now + step); triggerSnap(now + step * 3);
+          // additional hihat shaker
+          triggerSnap(now + step * 0.5); triggerSnap(now + step * 1.5);
+        }
+      }
+
+    }, intervalMs);
+  }
+
+  function triggerKick(time: number) {
+    if (!audioCtx || isMuted) return;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    
+    const sweepEnd = activeConcept === "2" ? 50 : 40;
+    osc.frequency.setValueAtTime(130, time);
+    osc.frequency.exponentialRampToValueAtTime(sweepEnd, time + 0.08);
+    
+    gain.gain.setValueAtTime(0.24, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+    
+    osc.connect(gain);
+    gain.connect(masterGain!);
+    osc.start(time);
+    osc.stop(time + 0.13);
+  }
+
+  function triggerSnap(time: number) {
+    if (!audioCtx || isMuted) return;
+    const bufferSize = audioCtx.sampleRate * 0.04;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
+    
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+    
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(6500, time);
+    
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0.06, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.03);
+    
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(masterGain!);
+    
+    noise.start(time);
+    noise.stop(time + 0.04);
+  }
+
+  // -------------------------------------------------------------
+  // ANIMATION TIMELINE ENGINE & TIMEOUT MOTORS
+  // -------------------------------------------------------------
+  function updatePlayer(timestamp: number) {
+    if (!isPlaying) return;
+    
+    if (!lastFrameTime) lastFrameTime = timestamp;
+    const delta = (timestamp - lastFrameTime) / 1000;
+    lastFrameTime = timestamp;
+    
+    currentTime += delta;
+    
+    const config = CONCEPT_DATA[activeConcept];
+    if (currentTime >= config.duration) {
+      pauseVideo();
+      currentTime = config.duration;
+      updateUI();
+      return;
+    }
+    
+    updateUI();
+    animationFrameId = requestAnimationFrame(updatePlayer);
+  }
+
+  function updateUI() {
+    const config = CONCEPT_DATA[activeConcept];
+    
+    // 1. Digital Time counter
+    const minutes = Math.floor(currentTime / 60);
+    const seconds = Math.floor(currentTime % 60);
+    const formatTime = (num: number) => String(num).padStart(2, '0');
+    timeCurrent.innerText = `${formatTime(minutes)}:${formatTime(seconds)}`;
+    
+    // 2. Progress track filling
+    const ratio = Math.min(currentTime / config.duration, 1);
+    progressBarFill.style.width = `${ratio * 100}%`;
+    progressHandle.style.left = `${ratio * 100}%`;
+
+    // 3. Scene switcher trigger
+    let activeScene = 1;
+    if (activeConcept === "1") {
+      if (currentTime < 8) activeScene = 1;
+      else if (currentTime >= 8 && currentTime < 14) activeScene = 2;
+      else if (currentTime >= 14 && currentTime < 24) activeScene = 3;
+      else if (currentTime >= 24 && currentTime < 32) activeScene = 4;
+      else activeScene = 5;
+    } else {
+      if (currentTime < 7) activeScene = 1;
+      else if (currentTime >= 7 && currentTime < 13) activeScene = 2;
+      else if (currentTime >= 13 && currentTime < 19) activeScene = 3;
+      else activeScene = 4;
+    }
+    
+    const prevScene = videoBox.getAttribute('data-active-scene');
+    if (prevScene !== String(activeScene)) {
+      videoBox.setAttribute('data-active-scene', String(activeScene));
+      const totalScenes = activeConcept === "1" ? 5 : 4;
+      watermarkSceneNum.innerText = `Scene ${activeScene} / ${totalScenes}`;
+      
+      // Update ticks active selector button highlights
+      document.querySelectorAll('.scene-select-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx + 1 === activeScene);
+      });
+      
+      // Spatial sound triggers
+      if (activeConcept === "1") {
+        if (activeScene === 1) triggerSfx('alert');
+        if (activeScene === 2) triggerSfx('swoosh');
+        if (activeScene === 3) {
+          triggerSfx('pop');
+          setTimeout(() => triggerSfx('pop'), 250);
+          setTimeout(() => triggerSfx('pop'), 450);
+        }
+        if (activeScene === 4) triggerSfx('chime');
+        if (activeScene === 5) triggerSfx('chime');
+      } else {
+        if (activeScene === 1) {
+          triggerSfx('pop');
+          setTimeout(() => triggerSfx('pop'), 1400);
+          setTimeout(() => triggerSfx('pop'), 2800);
+        }
+        if (activeScene === 2) triggerSfx('swoosh');
+        if (activeScene === 3) {
+          triggerSfx('chime');
+          setTimeout(() => triggerSfx('pop'), 200);
+          setTimeout(() => triggerSfx('pop'), 400);
+        }
+        if (activeScene === 4) triggerSfx('chime');
+      }
+    }
+    
+    // Sparkle background generators
+    if (isPlaying && Math.random() < 0.2) {
+      createSparkleParticle();
+    }
+  }
+
+  function createSparkleParticle() {
+    const parent = document.getElementById('particlesContainer');
+    if (!parent) return;
+    
+    const p = document.createElement('div');
+    p.classList.add('sparkle-particle');
+    
+    const size = Math.random() * 6 + 2;
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${left}%`;
+    p.style.top = `${top}%`;
+    p.style.opacity = '0';
+    
+    // Sparkle colors matches themes
+    const color = activeConcept === "2"
+      ? (Math.random() > 0.5 ? 'var(--accent-2)' : '#EFF6FF')
+      : (Math.random() > 0.5 ? 'var(--accent-2)' : '#FFFFFF');
+      
+    p.style.background = color;
+    p.style.transition = 'all 1.2s ease-out';
+    
+    parent.appendChild(p);
+    
+    setTimeout(() => {
+      p.style.opacity = String(Math.random() * 0.7 + 0.3);
+      p.style.transform = `translateY(-${Math.random() * 40 + 20}px) scale(1.5)`;
+    }, 10);
+    
+    setTimeout(() => { p.remove(); }, 1200);
+  }
+
+  function playVideo() {
+    isPlaying = true;
+    playOverlay.classList.add('hide');
+    iconPlay.classList.add('hide');
+    iconPause.classList.remove('hide');
+    
+    initAudio();
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    
+    lastFrameTime = 0;
+    animationFrameId = requestAnimationFrame(updatePlayer);
+  }
+
+  function pauseVideo() {
+    isPlaying = false;
+    iconPause.classList.add('hide');
+    iconPlay.classList.remove('hide');
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+  }
+
+  function togglePlayPause() {
+    if (isPlaying) {
+      pauseVideo();
+    } else {
+      playVideo();
+    }
+  }
+
+  function restartVideo() {
+    pauseVideo();
+    currentTime = 0;
+    
+    if (activeConcept === "2") {
+      const pie = document.querySelector('.expiry-pie') as HTMLElement;
+      if (pie) {
+        pie.style.animation = 'none';
+        void pie.offsetWidth;
+        pie.style.animation = 'clockPie 7s linear forwards';
+      }
+    }
+    
+    updateUI();
+    playVideo();
+  }
+
+  // Bind controls
+  btnPlayPause.addEventListener('click', togglePlayPause);
+  btnRestart.addEventListener('click', restartVideo);
+  btnSound.addEventListener('click', toggleSound);
+  playOverlay.addEventListener('click', playVideo);
+
+  progressTrack.addEventListener('click', (e) => {
+    const rect = progressTrack.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const config = CONCEPT_DATA[activeConcept];
+    const pct = Math.max(0, Math.min(clickX / rect.width, 1));
+    currentTime = pct * config.duration;
+    updateUI();
+  });
+
+  // Toggling Layout Ratios (Horizontal 16:9 / Vertical 9:16)
+  btnToggleFormat.addEventListener('click', () => {
+    const isHorizontal = videoWrapper.classList.contains('ratio-16-9');
+    const svgHorizontal = btnToggleFormat.querySelector('.ratio-horizontal-svg') as SVGElement;
+    const svgVertical = btnToggleFormat.querySelector('.ratio-vertical-svg') as SVGElement;
+
+    if (isHorizontal) {
+      videoWrapper.classList.remove('ratio-16-9');
+      videoWrapper.classList.add('ratio-9-16');
+      svgHorizontal.classList.add('hide');
+      svgVertical.classList.remove('hide');
+      formatText.innerText = "Format Lanskap (16:9)";
+    } else {
+      videoWrapper.classList.remove('ratio-9-16');
+      videoWrapper.classList.add('ratio-16-9');
+      svgVertical.classList.add('hide');
+      svgHorizontal.classList.remove('hide');
+      formatText.innerText = "Format Vertikal (9:16)";
+    }
+    updateUI();
+  });
+
+  // RECORD MODE ACTIVATION
+  function enterRecordMode() {
+    document.body.classList.add('record-active');
+    restartVideo();
+  }
+
+  function exitRecordMode() {
+    document.body.classList.remove('record-active');
+    pauseVideo();
+  }
+
+  btnRecordMode.addEventListener('click', enterRecordMode);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      exitRecordMode();
+    }
+  });
+
+  // Start initialization of defaults
+  switchConcept("1");
+</script>
